@@ -1,0 +1,31 @@
+---
+interface Props {
+  postTitle?: string;
+  postDescription?: string;
+}
+
+const { postTitle, postDescription } = Astro.props;
+---
+
+<style>
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  }
+</style>
+<header>
+  <div class="flex items-center bg-white h-16 relative shadow-md">
+
+    <div class="absolute h-full w-45 bg-black clip-diagonal" />
+    <h1 class="px-10 text-2xl text-white font-semibold font-title mix-blend-difference">Temple's Hideout</h1>
+
+    {(postTitle || postDescription) && (
+      <div class="pl-16">
+        {postTitle && <div class="text-2xl font-bold">{postTitle}</div>}
+        {postDescription && (
+          <div class="text-sm italic text-gray-600">{postDescription}</div>
+        )}
+      </div>
+    )}
+  </div>
+
+</header>
