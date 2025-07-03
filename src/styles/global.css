@@ -3,6 +3,8 @@
 @import "@fontsource-variable/jetbrains-mono";
 @import "@fontsource-variable/orbitron";
 
+@plugin "@tailwindcss/typography";
+
 @theme {
 	--font-sans: "Pretendard", sans-serif;
 	--font-mono: "JetBrains Mono", monospace;
