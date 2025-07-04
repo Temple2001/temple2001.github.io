@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BlogLayout from '../layouts/BlogLayout.astro';
+import PostBox from '../components/PostBox.astro';
 
 const allPosts = await getCollection('post');
 const recentPosts = allPosts
@@ -12,35 +13,28 @@ const recentPosts = allPosts
 	title="Temple's Hideout"
 	description="Temple의 개발 관련 블로그입니다."
 >
-	<div class="flex flex-col max-w-3xl mx-auto">
-		<!-- Hero Section -->
-		<div class="flex justify-between my-24">
-			<div
-				class="w-[25%] aspect-square rounded-full bg-[url('https://avatars.githubusercontent.com/u/39640991?v=4')] bg-contain"
-			>
-			</div>
-			<div class="flex flex-col w-[60%] justify-center">
-				<p class="text-2xl font-bold pb-4">Temple의 블로그입니다.</p>
-				<p>
-					Temple's Hideout에 오신 것을 환영합니다. 프로그래밍/개발에 관한
-					이야기를 담고 있습니다.
-				</p>
-			</div>
+	<!-- Hero Section -->
+	<div class="flex justify-between pb-20">
+		<div
+			class="w-[25%] aspect-square rounded-full bg-[url('https://avatars.githubusercontent.com/u/39640991?v=4')] bg-contain"
+		>
 		</div>
-		<div class="text-2xl font-bold mb-6">최근 게시물</div>
-		<ul class="space-y-4">
-			{
-				recentPosts.map((post) => (
-					<li class="border border-gray-300 rounded-lg">
-						<a class="p-6 block" href={`/post/${post.id}`}>
-							<p class="text-xl font-semibold mb-2">{post.data.title}</p>
-							<p class="text-sm text-gray-600">
-								{post.data.pubDate.toLocaleDateString()}
-							</p>
-						</a>
-					</li>
-				))
-			}
-		</ul>
+		<div class="flex flex-col w-[60%] justify-center">
+			<p class="text-2xl font-bold pb-4">Temple의 블로그입니다.</p>
+			<p>
+				Temple's Hideout에 오신 것을 환영합니다. 프로그래밍/개발에 관한 이야기를
+				담고 있습니다.
+			</p>
+		</div>
 	</div>
+	<div class="flex justify-between items-center pb-8">
+		<div class="text-2xl font-bold">최근 게시물</div>
+		<div class="text-sm text-gray-500">
+			<a href="/list/1">모든 게시물 보기 &gt;</a>
+		</div>
+	</div>
+
+	<ul class="space-y-6">
+		{recentPosts.map((post) => <PostBox post={post} />)}
+	</ul>
 </BlogLayout>

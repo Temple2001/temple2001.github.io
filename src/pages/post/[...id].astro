@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+	const allPosts = await getCollection('post');
+	return allPosts.map((post) => ({
+		params: { id: post.id },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BlogLayout
+	title=`Temple's Hideout - ${post.data.title}`
+	description={post.data.description}
+>
+	<h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
+	<p class="text-sm text-gray-600 mb-12">
+		{post.data.pubDate.toLocaleDateString()}
+	</p>
+	<div
+		class="prose lg:prose-lg max-w-none prose-h1:pt-8 prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-headings:pb-2 prose-headings:border-b-2 prose-headings:border-b-gray-200"
+	>
+		<Content />
+	</div>
+</BlogLayout>

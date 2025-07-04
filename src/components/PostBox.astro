@@ -1,0 +1,12 @@
+---
+const { post } = Astro.props;
+---
+
+<li class="border border-gray-300 rounded-lg">
+	<a class="p-6 block" href={`/post/${post.id}`}>
+		<p class="text-xl font-semibold mb-2">{post.data.title}</p>
+		<p class="text-sm text-gray-600">
+			{post.data.pubDate.toLocaleDateString()}
+		</p>
+	</a>
+</li>
