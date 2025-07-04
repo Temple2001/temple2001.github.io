@@ -5,6 +5,7 @@ import PostBox from '../components/PostBox.astro';
 
 const allPosts = await getCollection('post');
 const recentPosts = allPosts
+	.filter((post) => import.meta.env.DEV || post.data.blind !== true)
 	.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
 	.slice(0, 10);
 ---

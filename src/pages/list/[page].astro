@@ -4,9 +4,9 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import PostBox from '../../components/PostBox.astro';
 
 export async function getStaticPaths({ paginate }) {
-	const allPosts = (await getCollection('post')).sort(
-		(a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
-	);
+	const allPosts = (await getCollection('post'))
+		.filter((post) => import.meta.env.DEV || post.data.blind !== true)
+		.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 	return paginate(allPosts, {
 		pageSize: 10,
 	});
