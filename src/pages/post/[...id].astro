@@ -26,7 +26,16 @@ const { Content } = await render(post);
 		{post.data.pubDate.toLocaleDateString()}
 	</p>
 	<div
-		class="prose lg:prose-lg max-w-none prose-h1:pt-8 prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-headings:pb-2 prose-headings:border-b-2 prose-headings:border-b-gray-200"
+		class="prose max-w-none
+		sm:prose-sm lg:prose-base
+		prose-h1:pt-8
+		prose-headings:pb-2 prose-headings:border-b-1 prose-headings:border-b-gray-200
+		prose-a:no-underline prose-a:text-gray-500 prose-a:hover:underline
+		prose-li:my-3 prose-ul:my-3 prose-ol:my-3
+		prose-code:break-words prose-code:before:hidden prose-code:after:hidden prose-code:pr-1
+		prose-table:block prose-table:overflow-x-auto
+		prose-td:whitespace-nowrap
+		prose-blockquote:font-light prose-blockquote:bg-gray-50 prose-blockquote:py-0.5 prose-blockquote:rounded-xl"
 	>
 		<Content />
 	</div>

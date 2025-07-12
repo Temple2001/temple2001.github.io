@@ -10,3 +10,11 @@
 	--font-mono: "JetBrains Mono", monospace;
 	--font-title: "Orbitron Variable", sans-serif;
 }
+
+/* blockquote 큰따옴표 없애기 */
+.prose :where(blockquote p:first-of-type)::before {
+	content: none !important;
+}
+.prose :where(blockquote p:last-of-type)::after {
+	content: none !important;
+}

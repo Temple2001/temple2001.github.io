@@ -48,14 +48,11 @@ Django만 사용하는 풀스택 개발 환경에서는 별 상관이 없지만 
 
 이런 과정을 일일이 하게 되면 매우 귀찮고 번거로울 것이므로, DRF에서는 **Serializer**를 사용하여 **직렬화 과정**을 통해 Model에서 꺼낸 데이터를 Queryset의 형태가 아니라 **json** 형태로 받아온다.
 
-<aside>
-💡 **DRF를 활용한 개발 순서는?**
-
-: Django에서 개발 순서가 models.py → views.py → urls.py
-
-: DRF에서는 models.py → **serializers.py** → views.py → urls.py
-
-</aside>
+>💡 **DRF를 활용한 개발 순서는?**
+>
+> Django에서 개발 순서가 models.py → views.py → urls.py
+>
+> DRF에서는 models.py → **serializers.py** → views.py → urls.py
 
 직렬화가 데이터를 json 형태로 변환하는 과정이라면, **역직렬화**는 반대로 json 형태를 데이터로 변환하는 과정이다.
 
@@ -133,21 +130,18 @@ CBV는 다음과 같은 방법들로 구현이 가능하다.
                                   IsOwnerOrReadOnly]
         ```
         
-
-<aside>
-💡 **as_view()**
-
-- 클래스형 뷰에서는 path에 등록할 때 `.as_view()`를 사용함.
-- 심화
-    
-    클래스형 뷰는 클래스로 진입하기 위한 진입 메소드를 제공하는데, 이것이 `as_view()`메소드이며, 아래의 순서로 요청을 처리함.
-    
-    1. `as_view()` 메소드에서 클래스의 인스턴스를 생성한다.
-    2. 생성된 인스턴스의 `dispatch()` 메소드를 호출한다.
-    3. `dispatch()` 메소드는 요청을 검사해서 HTTP의 메소드(GET, POST)를 알아낸다.
-    4. 인스턴스 내에 해당 이름을 갖는 메소드로 요청을 중계한다.
-    5. 해당 메소드가 정의되어 있지 않으면,  `HttpResponseNotAllowed` 예외를 발생시킨다.
-</aside>
+>💡 **as_view()**
+>
+>- 클래스형 뷰에서는 path에 등록할 때 `.as_view()`를 사용함.
+>- 심화
+>    
+>    클래스형 뷰는 클래스로 진입하기 위한 진입 메소드를 제공하는데, 이것이 `as_view()`메소드이며, 아래의 순서로 요청을 처리함.
+>    
+>    1. `as_view()` 메소드에서 클래스의 인스턴스를 생성한다.
+>    2. 생성된 인스턴스의 `dispatch()` 메소드를 호출한다.
+>    3. `dispatch()` 메소드는 요청을 검사해서 HTTP의 메소드(GET, POST)를 알아낸다.
+>    4. 인스턴스 내에 해당 이름을 갖는 메소드로 요청을 중계한다.
+>    5. 해당 메소드가 정의되어 있지 않으면,  `HttpResponseNotAllowed` 예외를 발생시킨다.
 
 # 후기
 

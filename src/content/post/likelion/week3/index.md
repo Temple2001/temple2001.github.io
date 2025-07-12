@@ -27,28 +27,25 @@ Application Programming Interface, 두 애플리케이션 사이에서 데이터
 
 API의 종류에는 대표적으로 **SOAP API, RPC API, Websocket API, REST API**가 있다.
 
-<aside>
-💡 **GraphQL과 REST API**
-
-인터넷에서 REST API에 대해 검색하면 **GraphQL**이라는 개념을 자주 볼 수 있었는데, 이 둘은 어떤 공통점과 차이점이 있는지 궁금했다.
-
-### 공통점
-
-REST API와 GraphQL은 모두 클라이언트와 서버 사이에서 데이터를 전송할 수 있는 규칙의 집합이며, 따라서 둘 다 API에 속한다. 그래서 일반적인 API 아키텍쳐 원칙을 서로 공유하고 있으며 이 둘의 공통적인 원칙은 다음과 같다.
-
-- 둘 다 상태를 저장하지 않으므로 서버가 요청 간에 응답 기록을 저장하지 않는다.
-- 둘 다  클라이언트-서버 모델을 사용하므로 단일 클라이언트에서 요청하면 단일 서버에서 응답한다.
-- 둘 다 기반 통신 프로토콜인 HTTP를 기반으로 한다.
-
-### 차이점
-
-GraphQL은 REST API의 한계를 극복하기 위해서 2012년에 등장한 새로운 API 형태이다. REST API는 설계 시점에서 어떤 요청에 어떤 데이터를 반환할 지를 모두 정해두기 때문에 고정적이고 엄격한 구조를 가지고 있다. 그리고 그 구조 때문에 원하는 데이터를 얻기 위해서는 불필요한 다른 데이터들을 같이 가져와야 하는 상황들이 빈번하다.
-
-하지만 GraphQL은 쿼리 기반 솔루션을 가지고 있어 클라이언트가 원하는 데이터만 중점적으로 가져올 수 있다. 이는 REST API보다 필요한 대역폭과 데이터 가공 과정을 축소시킬 수 있다.
-
-결국 REST API 대신 GraphQL을 사용한다면 API를 개발하는 서버쪽의 부담은 이전보다 커지지만 API를 사용하는 클라이언트의 부담은 이전보다 작아질 것이다. 각각의 장단점이 존재하므로 상황에 맞게 사용하는 것이 중요할 것이다.
-
-</aside>
+>💡 **GraphQL과 REST API**
+>
+>인터넷에서 REST API에 대해 검색하면 **GraphQL**이라는 개념을 자주 볼 수 있었는데, 이 둘은 어떤 공통점과 차이점이 있는지 궁금했다.
+>
+>### 공통점
+>
+>REST API와 GraphQL은 모두 클라이언트와 서버 사이에서 데이터를 전송할 수 있는 규칙의 집합이며, 따라서 둘 다 API에 속한다. 그래서 일반적인 API 아키텍쳐 원칙을 서로 공유하고 있으며 이 둘의 공통적인 원칙은 다음과 같다.
+>
+>- 둘 다 상태를 저장하지 않으므로 서버가 요청 간에 응답 기록을 저장하지 않는다.
+>- 둘 다  클라이언트-서버 모델을 사용하므로 단일 클라이언트에서 요청하면 단일 서버에서 응답한다.
+>- 둘 다 기반 통신 프로토콜인 HTTP를 기반으로 한다.
+>
+>### 차이점
+>
+>GraphQL은 REST API의 한계를 극복하기 위해서 2012년에 등장한 새로운 API 형태이다. REST API는 설계 시점에서 어떤 요청에 어떤 데이터를 반환할 지를 모두 정해두기 때문에 고정적이고 엄격한 구조를 가지고 있다. 그리고 그 구조 때문에 원하는 데이터를 얻기 위해서는 불필요한 다른 데이터들을 같이 가져와야 하는 상황들이 빈번하다.
+>
+>하지만 GraphQL은 쿼리 기반 솔루션을 가지고 있어 클라이언트가 원하는 데이터만 중점적으로 가져올 수 있다. 이는 REST API보다 필요한 대역폭과 데이터 가공 과정을 축소시킬 수 있다.
+>
+>결국 REST API 대신 GraphQL을 사용한다면 API를 개발하는 서버쪽의 부담은 이전보다 커지지만 API를 사용하는 클라이언트의 부담은 이전보다 작아질 것이다. 각각의 장단점이 존재하므로 상황에 맞게 사용하는 것이 중요할 것이다.
 
 ## REST API
 
@@ -177,40 +174,37 @@ def get_secret(setting, secrets=secrets):
 SECRET_KEY = get_secret("SECRET_KEY")
 ```
 
-<aside>
-💡 **python-dotenv를 이용한 SECRET_KEY 숨기기**
-
-.json 파일을 이용해 SECRET_KEY를 숨기는 것도 하나의 방법이지만 .json 파일을 읽어오는 코드를 따로 작성해야 하는 불편함이 있다. `python-dotenv` 라는 외부 라이브러리를 이용해 스마트하게 SECRET_KEY를 숨겨보자.
-
-먼저 dotenv를 설치한다.
-
-```python
-pip install python-dotenv
-```
-
-설치가 끝나면 `.env` 라는 이름을 가진 파일을 하나 생성하여 프로젝트 디렉토리 안에 위치시킨다. (보통 프로젝트 루트 디렉토리에 위치시킴) 그리고 SECRET_KEY를 작성한다.
-
-```python
-# .env
-
-# 문자열을 쌍따옴표로 감쌀 필요 없이 그냥 작성한다
-SECRET_KEY=대충길고복잡한시크릿키
-```
-
-SECRET_KEY를 사용할 코드에는 다음과 같이 작성한다.
-
-```python
-import os
-from dotenv import load_dotenv
-
-load_dotenv(verbose=True)
-
-SECRET_KEY = os.getenv('SECRET_KEY')
-```
-
-이제 SECRET_KEY 변수를 사용할 수 있다.
-
-</aside>
+>💡 **python-dotenv를 이용한 SECRET_KEY 숨기기**
+>
+>.json 파일을 이용해 SECRET_KEY를 숨기는 것도 하나의 방법이지만 .json 파일을 읽어오는 코드를 따로 작성해야 하는 불편함이 있다. `python-dotenv` 라는 외부 라이브러리를 이용해 스마트하게 SECRET_KEY를 숨겨보자.
+>
+>먼저 dotenv를 설치한다.
+>
+>```python
+>pip install python-dotenv
+>```
+>
+>설치가 끝나면 `.env` 라는 이름을 가진 파일을 하나 생성하여 프로젝트 디렉토리 안에 위치시킨다. (보통 프로젝트 루트 디렉토리에 위치시킴) 그리고 SECRET_KEY를 작성한다.
+>
+>```python
+># .env
+>
+># 문자열을 쌍따옴표로 감쌀 필요 없이 그냥 작성한다
+>SECRET_KEY=대충길고복잡한시크릿키
+>```
+>
+>SECRET_KEY를 사용할 코드에는 다음과 같이 작성한다.
+>
+>```python
+>import os
+>from dotenv import load_dotenv
+>
+>load_dotenv(verbose=True)
+>
+>SECRET_KEY = os.getenv('SECRET_KEY')
+>```
+>
+>이제 SECRET_KEY 변수를 사용할 수 있다.
 
 ### 4. app 추가 절차
 

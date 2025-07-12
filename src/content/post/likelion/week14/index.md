@@ -64,29 +64,25 @@ class Member {
 - `@Entity` 속성에 name을 넣어서 엔티티 이름을 지정할 수 있음 → 다른 패키지에 이름이 같은 엔티티 클래스가 있을 때 별도로 변경
 - `@Table` 속성에 name을 넣어서 테이블 이름을 지정할 수 있음
 
-<aside>
-💡
-
-**데이터베이스 스키마 자동 생성**
-
-저번 스프링 세션에서 application.yml에 추가한 hibernate 옵션이 생각나시나요 ?
-
-application.yml에서 추가한 hibernate.ddl-auto 옵션은 JPA가 제공하는 기능으로 데이터베이스 스키마를 자동으로 생성할 수 있다.
-
-| 옵션 | 설명 |
-| --- | --- |
-| create | 기존 테이블을 삭제하고 새로 생성 → **`Drop + Create`** |
-| create-drop | create 속성에 추가로 애플리케이션을 종료할 때 생성한 DDL을 제거 → **`Drop + Create + Drop`** |
-| update | 데이터베이스 테이블과 엔티티 매핑정보를 비교하여 변경 사항만 수정 |
-| validate | 데이터베이스 테이블과 엔티티 매핑정보를 비교해서 차이가 있으면 경고를 남기고 애플리케이션을 실행하지 않음. 
-이 설정은 DDL을 수정하지 않음. |
-| none | 자동 생성 기능을 사용하지 않으려면 속상 자체를 삭제하거나 유효하지 않은 옵션 값을 주면 됨. |
-- **운영 장비에는 절대 `create`, `create-drop`, `update` 사용하면 안됨**
-- 일반적으로
-    - 개발 초기 단계: `create` `update`
-    - 테스트 서버: `update` `validate`
-    - 스테이징과 운영 서버: `validate` `none`
-</aside>
+>💡 **데이터베이스 스키마 자동 생성**
+>
+>저번 스프링 세션에서 application.yml에 추가한 hibernate 옵션이 생각나시나요 ?
+>
+>application.yml에서 추가한 hibernate.ddl-auto 옵션은 JPA가 제공하는 기능으로 데이터베이스 스키마를 자동으로 생성할 수 있다.
+>
+>| 옵션 | 설명 |
+>| --- | --- |
+>| create | 기존 테이블을 삭제하고 새로 생성 → **`Drop + Create`** |
+>| create-drop | create 속성에 추가로 애플리케이션을 종료할 때 생성한 DDL을 제거 → **`Drop + Create + Drop`** |
+>| update | 데이터베이스 테이블과 엔티티 매핑정보를 비교하여 변경 사항만 수정 |
+>| validate | 데이터베이스 테이블과 엔티티 매핑정보를 비교해서 차이가 있으면 경고를 남기고 애플리케이션을 실행하지 않음. 
+>이 설정은 DDL을 수정하지 않음. |
+>| none | 자동 생성 기능을 사용하지 않으려면 속상 자체를 삭제하거나 유효하지 않은 옵션 값을 주면 됨. |
+>- **운영 장비에는 절대 `create`, `create-drop`, `update` 사용하면 안됨**
+>- 일반적으로
+>    - 개발 초기 단계: `create` `update`
+>    - 테스트 서버: `update` `validate`
+>    - 스테이징과 운영 서버: `validate` `none`
 
 ## 기본 키 매핑
 
