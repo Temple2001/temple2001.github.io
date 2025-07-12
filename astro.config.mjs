@@ -18,6 +18,9 @@ export default defineConfig({
 	},
 
 	markdown: {
-		remarkPlugins: [["remark-toc", { heading: "목차", maxDepth: 2 }]],
+		remarkPlugins: [
+			["remark-toc", { heading: "목차", maxDepth: 2 }],
+			["remark-breaks", {}],
+		],
 	},
 });
