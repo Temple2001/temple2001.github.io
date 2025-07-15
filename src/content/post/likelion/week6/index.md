@@ -2,7 +2,7 @@
 title: 멋사 -  6주차 AWS EC2 세션
 description: 프로젝트 배포를 위해 대표적인 클라우드 컴퓨팅 플랫폼인 AWS를 사용해보자
 pubDate: 2024-04-10
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

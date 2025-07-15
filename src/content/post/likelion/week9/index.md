@@ -2,7 +2,7 @@
 title: 멋사 -  9주차 OAuth 세션
 description: 다양한 소셜로그인을 구현하는 데에 사용되는 OAuth 개념 알아보기
 pubDate: 2024-05-29
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

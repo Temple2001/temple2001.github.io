@@ -2,7 +2,7 @@
 title: 멋사 -  14주차 JPA 세션
 description: Java의 ORM인 JPA에 대해 알아보기
 pubDate: 2024-09-11
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

@@ -2,7 +2,7 @@
 title: SpringBoot Hibernate에서 @SoftDelete 사용하기
 description: 귀찮은 soft delete 작업을 어노테이션 한번으로 끝내보자
 pubDate: 2024-09-08
-tags: ['tmp']
+tags: ['개발', '@SoftDelete', 'Spring Boot']
 ---
 
 # 목차

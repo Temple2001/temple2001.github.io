@@ -2,7 +2,7 @@
 title: 멋사 -  7주차 DRF API 세션
 description: Django로 RESTful API를 만들기 위해 필요한 DRF 알아보기
 pubDate: 2024-05-01
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

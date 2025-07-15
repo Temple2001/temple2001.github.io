@@ -2,7 +2,7 @@
 title: 멋사 -  3주차 Django 세션
 description: 1학기동안 사용할 Django 프레임워크 알아보기
 pubDate: 2024-03-20
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

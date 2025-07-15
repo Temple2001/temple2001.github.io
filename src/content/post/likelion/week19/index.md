@@ -2,7 +2,7 @@
 title: 멋사 -  19주차 Spring Boot OAuth 세션
 description: Spring Boot에 OAuth 적용해보기
 pubDate: 2024-11-06
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

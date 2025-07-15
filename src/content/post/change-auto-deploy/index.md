@@ -2,7 +2,7 @@
 title: Github Actions 자동 배포 방식 변경하기
 description: Docker Compose를 이용한 기존 방식에서 Github Actions에서 jar 파일 빌드 후 서버에서 실행하는 방식으로 변경해보기
 pubDate: 2024-09-08
-tags: ['tmp']
+tags: ['개발', '배포', 'Docker Compose', 'Github Actions']
 ---
 
 # 목차

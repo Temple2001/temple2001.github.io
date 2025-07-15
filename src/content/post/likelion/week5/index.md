@@ -2,7 +2,7 @@
 title: 멋사 -  5주차 CRUD 세션
 description: Django 프레임워크로 간단한 CRUD를 구현해보기
 pubDate: 2024-04-03
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

@@ -2,7 +2,7 @@
 title: Django channels를 이용한 웹소켓 서버 구현
 description: 웹소켓 통신을 가능하게 해주는 Django의 channels 라이브러리를 이용해 웹소켓 서버를 구현해보자
 pubDate: 2024-08-10
-tags: ['tmp']
+tags: ['개발', 'Websocket', 'Django', 'Django channels']
 ---
 
 # 목차

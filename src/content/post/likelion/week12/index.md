@@ -2,7 +2,7 @@
 title: 멋사 -  12주차 Java for Spring Boot 세션
 description: Spring Boot를 배우기 위한 Java 문법 파헤쳐보기
 pubDate: 2024-08-28
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

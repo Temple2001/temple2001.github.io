@@ -2,7 +2,7 @@
 title: 멋사 -  13주차 Spring Boot 세션
 description: Spring Boot 시작해보기
 pubDate: 2024-09-04
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차

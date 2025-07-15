@@ -2,7 +2,7 @@
 title: 멋사 -  16주차 Spring Boot CRUD 세션
 description: Spring Boot로 CRUD를 구현해보기
 pubDate: 2024-10-02
-tags: ['tmp']
+tags: ['멋쟁이사자처럼']
 ---
 
 # 목차
