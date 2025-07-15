@@ -98,7 +98,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
 ## Redis의 pub/sub 기능으로 컨테이너 간 소통 문제 해결
 Redis의 pub/sub은 Message Queue라는 통신 방법 중 하나이다.
-pub/sub은 각각 **publish(발행)**, **subscribe(구독)**를 의미한다. 특정 Topic을 구독한 구독자들에게 Topic에 발행된 메시지를 일괄적으로 송신하는 기능이다.
+pub/sub은 각각 **publish(발행)**, **subscribe(구독)** 를 의미한다. 특정 Topic을 구독한 구독자들에게 Topic에 발행된 메시지를 일괄적으로 송신하는 기능이다.
 
 Redis의 pub/sub 기능을 사용한다면 컨테이너간 정보 공유를 가능하게 할 수 있다.
 
