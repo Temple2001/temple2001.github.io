@@ -22,7 +22,16 @@ const { Content } = await render(post);
 	description={post.data.description}
 >
 	<h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
-	<p class="text-sm text-gray-600 mb-12">
+	<div class="mb-4 flex flex-wrap gap-y-2">
+		{
+			post.data.tags.map((tag) => (
+				<span class="px-2 py-1 mr-2 text-xs text-gray-700 bg-slate-200 rounded-full">
+					{tag}
+				</span>
+			))
+		}
+	</div>
+	<p class="text-sm text-right text-gray-600 mb-12">
 		{post.data.pubDate.toLocaleDateString()}
 	</p>
 	<div

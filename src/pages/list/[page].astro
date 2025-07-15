@@ -2,17 +2,21 @@
 import { getCollection } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import PostBox from '../../components/PostBox.astro';
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 
-export async function getStaticPaths({ paginate }) {
+export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = (await getCollection('post'))
 		.filter((post) => import.meta.env.DEV || post.data.blind !== true)
 		.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 	return paginate(allPosts, {
 		pageSize: 10,
 	});
-}
+}) satisfies GetStaticPaths;
 
-const { page } = Astro.props;
+// getStaticPaths에서 반환된 Props 타입 정보를 불러옴
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.props as Props;
 ---
 
 <BlogLayout
