@@ -3,7 +3,6 @@ title: Firebase와 Spring Security 인증 구현
 description: Firebase auth와 Spring Security를 사용해서 회원 관리 및 인증을 구현하기
 pubDate: 2024-09-02
 tags: ['tmp']
-#blind: true
 ---
 
 # 목차
