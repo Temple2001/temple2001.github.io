@@ -1,14 +1,13 @@
 @import "tailwindcss";
 @import "pretendard/dist/web/static/pretendard-dynamic-subset.css";
 @import "@fontsource-variable/jetbrains-mono";
-@import "@fontsource-variable/orbitron";
+@import "@fontsource/orbitron/600.css";
 
 @plugin "@tailwindcss/typography";
 
 @theme {
 	--font-sans: "Pretendard", sans-serif;
-	--font-mono: "JetBrains Mono", monospace;
-	--font-title: "Orbitron Variable", sans-serif;
+	--font-title: "Orbitron", sans-serif;
 }
 
 /* blockquote 큰따옴표 없애기 */
