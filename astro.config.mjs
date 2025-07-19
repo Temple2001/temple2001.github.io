@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import remarkToc from "remark-toc";
 import remarkBreaks from "remark-breaks";
+import firstImageToFrontmatter from "./src/plugins/remark-first-image-to-frontmatter.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,6 +22,7 @@ export default defineConfig({
 
 	markdown: {
 		remarkPlugins: [
+			firstImageToFrontmatter,
 			[remarkToc, { heading: "목차", maxDepth: 2 }],
 			[remarkBreaks, {}],
 		],
