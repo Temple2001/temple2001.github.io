@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../utils';
 
 interface Props {
 	post: CollectionEntry<'post'>;
@@ -7,8 +8,8 @@ interface Props {
 const { post } = Astro.props as Props;
 ---
 
-<li class="border border-gray-300 rounded-lg">
-	<a class="p-6 block" href={`/post/${post.id}`}>
+<li class="border border-gray-300 rounded-lg duration-200 ease-in-out hover:shadow-md hover:-translate-y-1 relative flex">
+	<a class="p-6 block flex-1" href={`/post/${post.id}`}>
 		<p class="text-xl font-semibold mb-2">{post.data.title}</p>
 		<div class="mb-2">
 			{
@@ -29,7 +30,22 @@ const { post } = Astro.props as Props;
 			}
 		</div>
 		<p class="text-sm text-gray-600">
-			{post.data.pubDate.toLocaleDateString()}
+			{formatDate(post.data.pubDate)}
 		</p>
 	</a>
+	{post.data.imageUrl && (
+		<div
+			class="absolute right-0 top-0 h-full"
+			style={`
+				width: 40%;
+				background-image: url('${post.data.imageUrl.startsWith("http") ? post.data.imageUrl : `/post/${post.id}/${post.data.imageUrl}`}');
+				background-size: cover;
+				background-position: center;
+				opacity: 0.15;
+				border-top-right-radius: 0.5rem;
+				border-bottom-right-radius: 0.5rem;
+				pointer-events: none;
+			`}
+		></div>
+	)}
 </li>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { render } from 'astro:content';
+import { formatDate } from '../../utils';
 
 export async function getStaticPaths() {
 	const allPosts = await getCollection('post');
@@ -34,7 +35,7 @@ const { Content } = await render(post);
 		}
 	</div>
 	<p class="text-sm text-right text-gray-600 mb-12">
-		{post.data.pubDate.toLocaleDateString()}
+		{formatDate(post.data.pubDate)}
 	</p>
 	<div
 		class="prose max-w-none
