@@ -4,6 +4,8 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 import tailwindcss from "@tailwindcss/vite";
+import remarkToc from "remark-toc";
+import remarkBreaks from "remark-breaks";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,8 +21,8 @@ export default defineConfig({
 
 	markdown: {
 		remarkPlugins: [
-			["remark-toc", { heading: "목차", maxDepth: 2 }],
-			["remark-breaks", {}],
+			[remarkToc, { heading: "목차", maxDepth: 2 }],
+			[remarkBreaks, {}],
 		],
 	},
 });
