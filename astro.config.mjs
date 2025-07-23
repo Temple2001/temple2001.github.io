@@ -10,7 +10,7 @@ import firstImageToFrontmatter from "./src/plugins/remark-first-image-to-frontma
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://example.com",
+	site: "https://blog.templ.es",
 	integrations: [mdx(), sitemap()],
 	server: {
 		port: 3000,
