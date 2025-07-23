@@ -27,6 +27,6 @@ npm ci에서 ci는 Clean Install을 말하는 것으로, 다음과 같은 특징
 
 # 참조
 
-https://velog.io/@yu00hun/npm-ci
+[npm ci](https://velog.io/@yu00hun/npm-ci)
 
-https://jihyundev.tistory.com/21
+[[npm] package-lock.json이 필요한 이유](https://jihyundev.tistory.com/21)

@@ -274,4 +274,4 @@ DB에는 TransactionHistory 라는 테이블 하나만 존재하게 되고, 여�
 
 # 참조
 
-https://velog.io/@loakick/Nest.js-TypeORM-%EB%A6%AC%ED%8C%A9%ED%84%B0%EB%A7%81-SingleTableInheritance
+[Nest.js TypeORM 리팩터링 (SingleTableInheritance)](https://velog.io/@loakick/Nest.js-TypeORM-%EB%A6%AC%ED%8C%A9%ED%84%B0%EB%A7%81-SingleTableInheritance)
