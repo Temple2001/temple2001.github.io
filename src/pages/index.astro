@@ -7,7 +7,7 @@ const allPosts = await getCollection('post');
 const recentPosts = allPosts
 	.filter((post) => import.meta.env.DEV || post.data.blind !== true)
 	.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-	.slice(0, 10);
+	.slice(0, 5);
 ---
 
 <BlogLayout
@@ -23,8 +23,8 @@ const recentPosts = allPosts
 		<div class="flex flex-col w-full sm:w-[60%] justify-center">
 			<p class="text-2xl font-bold pb-4">Temple의 블로그입니다.</p>
 			<p>
-				Temple's Hideout에 오신 것을 환영합니다.<br />프로그래밍/개발에 관한 이야기를
-				담고 있습니다.
+				Temple's Hideout에 오신 것을 환영합니다.<br />프로그래밍/개발에 관한
+				이야기를 담고 있습니다.
 			</p>
 		</div>
 	</div>
