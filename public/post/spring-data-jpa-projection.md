@@ -2,7 +2,7 @@
 title: Spring Data JPA에서 필요한 속성만 조회하는 방법
 description: Spring Data JPA에서 Projection을 사용해 필요한 속성만을 뽑아오자
 pubDate: 2025-04-24
-tags: [개발, N+1 문제, Fetch Join, JPQL, '@EntityGraph']
+tags: [개발, Spring Data JPA, Projection]
 ---
 
 DB의 필요한 속성만을 조회하는 것을 Projection이라고 한다.

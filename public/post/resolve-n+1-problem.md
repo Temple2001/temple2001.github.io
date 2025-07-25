@@ -2,7 +2,7 @@
 title: N+1 문제를 해결해보자
 description: 포인트 기능 개발 중 맞닥뜨린 N+1 문제를 해결해보자
 pubDate: 2025-04-14
-tags: [개발, N+1 문제, Fetch Join, JPQL, '@EntityGraph']
+tags: [개발, 개선, N+1 문제, Fetch Join, JPQL, '@EntityGraph']
 ---
 
 # 목차
