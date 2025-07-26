@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BlogLayout from '../layouts/BlogLayout.astro';
 import PostBox from '../components/PostBox.astro';
+import GithubLogo from '../../public/github-mark.svg';
 
 const allPosts = await getCollection('post');
 const recentPosts = allPosts
@@ -20,12 +21,18 @@ const recentPosts = allPosts
 			class="w-32 sm:w-[25%] mb-8 mx-auto sm:mb-0 sm:mx-0 aspect-square rounded-full bg-[url('https://avatars.githubusercontent.com/u/39640991?v=4')] bg-contain bg-no-repeat"
 		>
 		</div>
-		<div class="flex flex-col w-full sm:w-[60%] justify-center">
+		<div
+			class="flex flex-col w-full sm:w-[60%] justify-center items-center sm:items-stretch"
+		>
 			<p class="text-2xl font-bold pb-4">Temple의 블로그입니다.</p>
-			<p>
+			<p class="pb-4">
 				Temple's Hideout에 오신 것을 환영합니다.<br />프로그래밍/개발에 관한
 				이야기를 담고 있습니다.
 			</p>
+			<a href="https://github.com/temple2001/" class="w-8 h-8">
+				<GithubLogo width="1.8rem" height="1.8rem" viewBox="0 0 98 96" />
+				<div></div>
+			</a>
 		</div>
 	</div>
 	<div class="flex justify-between items-center pb-8">

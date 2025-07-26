@@ -25,6 +25,9 @@ const { Content } = await render(post);
 	<h1 class="text-4xl lg:text-5xl break-keep font-bold mb-[1.5rem]">
 		{post.data.title}
 	</h1>
+	<p class="text-sm lg:text-base text-gray-500 italic pb-4">
+		{post.data.description}
+	</p>
 	<div class="mb-4 flex flex-wrap gap-y-2">
 		{
 			post.data.tags.map((tag) => (
