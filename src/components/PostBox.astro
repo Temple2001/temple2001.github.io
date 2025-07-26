@@ -12,7 +12,9 @@ const { remarkPluginFrontmatter } = await render(post);
 post.data.imageUrl = remarkPluginFrontmatter.imageUrl || post.data.imageUrl;
 ---
 
-<li class="border border-gray-300 rounded-lg duration-200 ease-in-out hover:shadow-md hover:-translate-y-1 relative flex">
+<li
+	class="border border-gray-300 rounded-lg duration-200 ease-in-out hover:shadow-md hover:-translate-y-1 relative flex"
+>
 	<a class="p-6 block flex-1" href={`/post/${post.id}`}>
 		<div class="lg:max-w-[60%]">
 			<p class="text-xl font-semibold mb-2 break-keep">{post.data.title}</p>
@@ -39,17 +41,23 @@ post.data.imageUrl = remarkPluginFrontmatter.imageUrl || post.data.imageUrl;
 			</p>
 		</div>
 	</a>
-	{post.data.imageUrl && (
-		<div class="absolute right-0 top-0 h-full w-[40%] pointer-events-none rounded-tr-lg rounded-br-lg overflow-hidden hidden lg:block">
-			<Image
-				src={post.data.imageUrl.startsWith("http") ? post.data.imageUrl : `/post/${post.id}/${post.data.imageUrl}`}
-				alt={post.data.title}
-				class="w-full h-full object-cover object-left"
-				loading="lazy"
-				style="mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);"
-				width="400"
-				height="250"
-			/>
-		</div>
-	)}
+	{
+		post.data.imageUrl && (
+			<div class="absolute right-0 top-0 h-full w-[40%] pointer-events-none rounded-tr-lg rounded-br-lg overflow-hidden hidden lg:block">
+				<Image
+					src={
+						post.data.imageUrl.startsWith('http')
+							? post.data.imageUrl
+							: `/post/${post.id}/${post.data.imageUrl}`
+					}
+					alt={post.data.title}
+					class="w-full h-full object-cover object-left"
+					loading="lazy"
+					style="mask-image: linear-gradient(to left, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);"
+					width="400"
+					height="250"
+				/>
+			</div>
+		)
+	}
 </li>
