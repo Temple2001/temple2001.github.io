@@ -2,7 +2,7 @@
 title: Facade 패턴을 적용해보자
 description: Service 코드의 과중한 책임을 분산시키기 위해 Facade 패턴을 적용해보자
 pubDate: 2025-05-26
-tags: [개발, 개선, Facade 패턴]
+tags: [개선, Facade 패턴]
 ---
 
 # 목차

@@ -2,7 +2,7 @@
 title: 블로그 개발 일지 (New)
 description: Temple's Hideout 블로그의 새 버전 개발 일지입니다.
 pubDate: 2023-09-01
-tags: ['개발', 'Next.js', 'contentlayer', 'SSG', 'Github Pages', 'Github Actions']
+tags: ['구현', 'Next.js', 'contentlayer', 'SSG', 'Github Pages', 'Github Actions']
 ---
 
 # 목차

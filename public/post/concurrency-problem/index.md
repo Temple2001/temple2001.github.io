@@ -2,7 +2,7 @@
 title: '비관적 Lock을 이용한 동시성 이슈 해결'
 description: '신뢰성 있는 포인트 기능을 위해 비관적 Lock을 사용해서 동시성 문제를 해결해보자'
 pubDate: '2025-04-04'
-tags: [개발, 개선, 동시성 이슈, DB Lock, 비관적 Lock]
+tags: [개선, 동시성 이슈, DB Lock, 비관적 Lock]
 ---
 
 # 목차

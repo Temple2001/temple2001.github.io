@@ -2,7 +2,7 @@
 title: Docker의 Named Volume vs Bind Mount
 description: Docker Volume을 구성하는 서로 다른 두가지 방법을 알아보자
 pubDate: 2025-06-16
-tags: [개발, 리서치, Docker, Named Volume, Bind Mount]
+tags: [리서치, Docker, Named Volume, Bind Mount]
 ---
 
 # Named Volume

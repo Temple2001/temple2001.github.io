@@ -2,7 +2,7 @@
 title: 'Spring Boot 테스트 코드 작성 중 사용되는 어노테이션 정리'
 description: '@SpringBootTest, @ExtendWith(MockitoExtension.class), @Mock, @MockBean 의 사용처를 알아보자'
 pubDate: '2025-04-03'
-tags: [개발, 리서치, '@SpringBootTest', '@ExtendWith(MockitoExtension.class)', '@Mock', '@MockBean']
+tags: [리서치, '@SpringBootTest', '@ExtendWith(MockitoExtension.class)', '@Mock', '@MockBean']
 ---
 
 # 목차

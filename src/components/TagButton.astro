@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	post: CollectionEntry<'post'>;
+	shorten?: boolean;
+}
+
+const { post, shorten = false } = Astro.props;
+function coloringTag(tag: string): string {
+	switch (tag) {
+		case '구현':
+			return 'bg-orange-100 text-orange-950';
+		case '리서치':
+			return 'bg-green-100 text-green-950';
+		case '인프라':
+			return 'bg-blue-100 text-blue-950';
+		case '트러블 슈팅':
+			return 'bg-rose-100 text-rose-950';
+		case '개선':
+			return 'bg-purple-100 text-purple-950';
+		default:
+			return 'bg-slate-200';
+	}
+}
+---
+
+{
+	Astro.props.shorten ? (
+		<div class="flex flex-wrap gap-y-1">
+			{post.data.tags.slice(0, 5).map((tag) => (
+				<span
+					class={`px-2 py-1 mr-2 text-xs text-gray-700 ${coloringTag(tag)} rounded-full`}
+				>
+					{tag}
+				</span>
+			))}
+			{post.data.tags.length > 5 && (
+				<span class="px-2 py-1 text-xs text-gray-500 bg-slate-100 rounded-full">
+					...
+				</span>
+			)}
+		</div>
+	) : (
+		<div class="mb-4 flex flex-wrap gap-y-2">
+			{post.data.tags.map((tag) => (
+				<span
+					class={`px-2 py-1 mr-2 text-xs text-gray-700 ${coloringTag(tag)} rounded-full`}
+				>
+					{tag}
+				</span>
+			))}
+		</div>
+	)
+}

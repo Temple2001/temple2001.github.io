@@ -2,7 +2,7 @@
 title: NestJS에 캐싱 적용하기 (Redis 설치 없이!)
 description: 별도의 Redis 설치 및 환경 구성 없이 NestJS 내부 캐싱 기능을 사용하여 성능을 개선해보자
 pubDate: 2025-06-11
-tags: [개발, 개선, NestJS, 캐싱, cache-manager]
+tags: [개선, NestJS, 캐싱, cache-manager]
 ---
 
 현재 프로젝트에는 투자 봇의 전체 기간 수익률, 최근 1년간 수익률, 전체 스테이킹 수량을 대시보드에 띄우는 기능이 존재하고 있다.

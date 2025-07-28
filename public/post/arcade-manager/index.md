@@ -2,7 +2,7 @@
 title: Arcade Manager 제작기
 description: 디스코드 봇을 이용해 오락실의 유튜브 Live 방송을 손쉽게 기록할 수 있는 프로그램을 제작하였습니다.
 pubDate: 2023-03-05
-tags: ['개발', 'Discord', 'Python', 'Flask', 'React', 'MongoDB', 'Youtube API']
+tags: ['구현', 'Discord', 'Python', 'Flask', 'React', 'MongoDB', 'Youtube API']
 ---
 
 > 현재 이 글은 작성중입니다.
@@ -42,14 +42,12 @@ tags: ['개발', 'Discord', 'Python', 'Flask', 'React', 'MongoDB', 'Youtube API'
 3. 받아온 정보를 DB에 저장한다.
 4. API 서버가 웹페이지에 사용될 DB의 정보들을 보낸다. (항상 진행중)
 
-
 따라서 아래와 같은 코드가 필요하다.
 
 - 디스코드 봇을 운영하는 코드
 - Youtube Data API를 이용하는 코드
 - DB에서 데이터를 읽고 쓰는 코드
 - API 서버를 운영하는 코드
-
 
 디스코드를 다루는 부분은 [discord.py](https://github.com/Rapptz/discord.py)가 이미 잘 만들어져 있어 이를 중심으로 만들 것이다.
 
@@ -137,7 +135,7 @@ class MongoDB_API:
         except:
             print(f'[Error] DB 데이터 추가 에러\n{traceback.format_exc()}')
             return '[Failed] DB 데이터 추가 실패'
-    
+
     def find_log(self):
         return self.log_db.find({}, {'_id': False}).sort('log_time')
 ```
@@ -162,7 +160,7 @@ class YoutubeAPI:
     def __init__(self):
         load_dotenv(verbose=True)
         self.API_KEY = os.getenv('API_KEY')
-    
+
     def find_video(self, keyword):
         params = {
             'q': keyword,
@@ -179,13 +177,13 @@ class YoutubeAPI:
             print('[Error] find_video 에러, 생방송 video를 찾지 못함.')
             print(json.dumps(res_json, indent=2))
             return None, '[Failed] 해당 생방송 video를 찾지 못했습니다.'
-        
+
         search_list = res_json['items']
         for video in search_list:
             if video['snippet']['liveBroadcastContent'] == 'live':
                 return video['id']['videoId'], None
         return None, '[Failed] 해당 생방송 video를 찾지 못했습니다.'
-            
+
     def url_parse(self, url):
         try:
             parsed_url = urlparse(url)
@@ -226,7 +224,6 @@ Youtube 공식 API를 이용해 키워드로 생방송 영상을 검색해 비�
 
 [Github 링크](https://github.com/Temple2001/arcade-manager/tree/main/frontend_reactjs)
 
-
 # 후기
 
 ## 어려웠던 점
@@ -246,6 +243,7 @@ CORS 에러에 대해 간단히 설명하자면 **다른 출처**의 자원을 �
 ---
 
 따라서 문제를 해결하기 위해서는
+
 1. 서버에서 `Access-Control-Allow-Origin` 헤더를 세팅하고 브라우저에 응답을 보내 예외를 설정하거나
 2. 프론트 단에서 프록시 서버를 이용해 동일한 출처에서 요청을 보내는 것처럼 만드는 방법이 있다.
 

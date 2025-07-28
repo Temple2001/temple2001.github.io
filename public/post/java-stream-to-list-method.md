@@ -2,7 +2,7 @@
 title: .collect(Collectors.toList()) vs .toList() 차이
 description: Java에서 Stream을 List로 변환하는 두 방법을 이해해보자
 pubDate: 2025-04-10
-tags: [개발, 리서치, Java, toList(), Stream, List]
+tags: [리서치, Java, toList(), Stream, List]
 ---
 
 Java에서 Stream을 List로 바꾸는 것은 위 두 방법으로 모두 가능한데, 무슨 차이가 있을까?

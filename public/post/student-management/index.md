@@ -2,7 +2,7 @@
 title: 원생 관리 프로그램 제작기
 description: Python 기반으로 학원생을 관리하는 자동화 프로그램을 제작하였습니다.
 pubDate: 2023-01-28
-tags: ['개발', 'Python']
+tags: ['구현', 'Python']
 ---
 
 # 목차

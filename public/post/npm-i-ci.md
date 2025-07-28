@@ -2,7 +2,7 @@
 title: 'CI/CD 환경에서 npm install 대신 npm ci를 사용하는 이유'
 description: 'npm install과 npm ci의 차이를 알아보자'
 pubDate: '2025-03-18'
-tags: [개발, 리서치, npm]
+tags: [리서치, npm, npm install, npm ci]
 ---
 
 npm ci에서 ci는 Clean Install을 말하는 것으로, 다음과 같은 특징을 가진다.

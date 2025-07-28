@@ -2,7 +2,7 @@
 title: 대용량 데이터에서의 pagination
 description: 대용량 데이터를 pagination 하는 방식의 성능을 평가하고 더 나은 방법을 찾아보자
 pubDate: 2025-05-08
-tags: [개발, 리서치, 페이지네이션, mongoose]
+tags: [리서치, 페이지네이션, mongoose]
 ---
 
 현재 프로젝트에서 mongoose를 사용하고 있는데, 페이지네이션을 구현해야 했다.

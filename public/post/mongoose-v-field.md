@@ -2,7 +2,7 @@
 title: Mongoose의 __v key
 description: Mongoose의 __v key가 어떤 역할을 하는지 알아보자
 pubDate: 2025-05-23
-tags: [개발, 리서치, mongoose, __v]
+tags: [리서치, mongoose, __v]
 ---
 
 Mongoose를 사용하여 새로운 데이터를 document에 생성하면 `__v` key가 자동으로 생성된다.

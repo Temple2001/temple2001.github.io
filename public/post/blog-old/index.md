@@ -2,7 +2,7 @@
 title: 블로그 개발 일지 (Old)
 description: Temple's Hideout 블로그의 옛 버전 개발 일지입니다.
 pubDate: 2022-11-07
-tags: ['개발', 'Gatsby']
+tags: ['구현', 'Gatsby', 'Github Pages']
 ---
 
 # 목차

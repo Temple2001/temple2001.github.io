@@ -2,7 +2,7 @@
 title: ECS 컨테이너 Health Check가 계속 실패하는 이유
 description: ECS 컨테이너에 Health Check를 적용하는 도중 겪은 트러블슈팅 경험
 pubDate: 2025-04-28
-tags: [개발, 트러블슈팅, ECS, Health Check, alpine]
+tags: [트러블 슈팅, ECS, Health Check, alpine]
 imageUrl: ecs-container.png
 ---
 

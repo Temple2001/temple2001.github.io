@@ -2,7 +2,7 @@
 title: '단일 테이블 상속 전략으로 DB 구조 최적화하기'
 description: '여러 테이블간의 중복된 field를 효과적으로 다루어보자'
 pubDate: '2025-03-19'
-tags: [개발, 개선, 단일 테이블 상속 전략, '@TableInheritance']
+tags: [개선, 단일 테이블 상속 전략, '@TableInheritance']
 ---
 
 # 목차

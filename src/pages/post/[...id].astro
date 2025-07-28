@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { render } from 'astro:content';
 import { formatDate } from '../../utils';
+import TagButton from '../../components/TagButton.astro';
 
 export async function getStaticPaths() {
 	const allPosts = await getCollection('post');
@@ -28,14 +29,8 @@ const { Content } = await render(post);
 	<p class="text-sm lg:text-base text-gray-500 italic pb-4">
 		{post.data.description}
 	</p>
-	<div class="mb-4 flex flex-wrap gap-y-2">
-		{
-			post.data.tags.map((tag) => (
-				<span class="px-2 py-1 mr-2 text-xs text-gray-700 bg-slate-200 rounded-full">
-					{tag}
-				</span>
-			))
-		}
+	<div class="mb-4">
+		<TagButton post={post} />
 	</div>
 	<p class="text-sm text-right text-gray-600 mb-12">
 		{formatDate(post.data.pubDate)}

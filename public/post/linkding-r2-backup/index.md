@@ -2,7 +2,7 @@
 title: cloudflare R2에 linkding 백업하기
 description: linkding 사용 중에 저장되는 북마크들을 주기적으로 Cloudflare R2에 자동 백업해보자
 pubDate: 2025-07-05
-tags: [개발, 자동 백업, linkding, Cloudflare R2]
+tags: [인프라, 자동 백업, linkding, Cloudflare R2]
 ---
 
 # linkding 이란?

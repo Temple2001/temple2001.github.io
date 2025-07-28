@@ -2,7 +2,7 @@
 title: EC2에서 nginx와 certbot 설치 없이 HTTPS 적용하기
 description: docker를 사용하여 nginx와 certbot 설치 없이 간편하게 HTTPS 인증서를 발급해보자
 pubDate: 2025-05-08
-tags: [개발, Nginx, Certbot, Docker, HTTPS, 인증서]
+tags: [인프라, Nginx, Certbot, Docker, HTTPS, 인증서]
 ---
 
 지금까지 백엔드 서버에 HTTPS를 적용해야 했을 때는 AWS 로드밸런서를 사용하거나, 직접 nginx와 certbot을 설치하였었다.

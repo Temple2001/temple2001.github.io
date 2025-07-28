@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/sitemap": "^3.4.1",
     "@fontsource-variable/jetbrains-mono": "^5.2.6",
     "@fontsource/orbitron": "^5.2.6",
     "@tailwindcss/vite": "^4.1.8",

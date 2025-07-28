@@ -2,7 +2,7 @@
 title: certbot 설치 없이 인증서 만료일 확인 및 갱신
 description: docker를 사용하여 certbot 설치 없이 간편하게 HTTPS 인증서를 자동으로 갱신해보자
 pubDate: 2025-05-19
-tags: [개발, Certbot, Docker, crontab, HTTPS, 인증서]
+tags: [인프라, Certbot, Docker, crontab, HTTPS, 인증서]
 ---
 
 이전에 certbot 설치 없이 인증서를 발급하는 docker 명령어를 사용한 적이 있었는데, 이번에는 자동갱신을 certbot 설치 없이 docker 명령어로 수행할 예정이다.

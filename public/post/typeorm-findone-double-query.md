@@ -2,7 +2,7 @@
 title: TypeORM에서 findOne에 relations 옵션을 넣으면 쿼리가 두번 실행된다?
 description: TypeORM의 이중 쿼리 문제를 경험해보았다
 pubDate: 2025-04-25
-tags: [개발, TypeORM, findOne]
+tags: [리서치, TypeORM, findOne]
 ---
 
 ```java

@@ -2,7 +2,7 @@
 title: 'repository.save() 로 반환된 객체를 기존 객체 대신 이용해야 하는 이유'
 description: '전달된 파라미터에 따라 다르게 동작하는 save 메서드를 이해해보자'
 pubDate: '2025-04-03'
-tags: [개발, 리서치, Spring Boot, Spring Data JPA]
+tags: [리서치, Spring Boot, Spring Data JPA]
 ---
 
 Spring JPA에서 `repository.save(entity)` 를 사용할 때 파라미터로 전달된 entity에도 Id 정보가 기입되기 때문에(@GeneratedValue에 외해) 기존 객체를 이어서 사용해도 될 줄 알았지만 아니었다.

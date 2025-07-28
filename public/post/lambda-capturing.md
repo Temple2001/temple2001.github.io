@@ -2,7 +2,7 @@
 title: 람다 캡쳐링(Capturing Lambda)이란?
 description: 람다식에서 왜 변경된 변수를 사용할 수 없는지에 대해 알아보자
 pubDate: 2025-05-27
-tags: [개발, 리서치, Capturing Lambda, effectively final variable]
+tags: [리서치, Capturing Lambda, effectively final variable]
 ---
 
 ```java

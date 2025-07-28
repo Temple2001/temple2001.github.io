@@ -2,7 +2,7 @@
 title: JpaRepository에서 findBy<Entity> vs findBy<Entity>Id
 description: JpaRepository의 쿼리 메서드의 작동방식을 정확히 이해해보자
 pubDate: 2025-04-11
-tags: [개발, 리서치, JpaRepository, findBy]
+tags: [리서치, JpaRepository, findBy]
 ---
 
 어떤 엔티티의 외래키에 해당하는 엔티티의 Id로 조회하려고 할 때, `findBy<Entity>` 와 `findBy<Entity>Id` 를 사용할 수 있다.

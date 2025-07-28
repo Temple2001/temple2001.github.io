@@ -2,7 +2,7 @@
 title: Redis pub/sub을 이용한 MSA 적용기
 description: 트래픽 과부하를 대비하는 MSA 구조를 Redis pub/sub을 이용해 만들어보자
 pubDate: 2025-01-19
-tags: ['개발', 'MSA', 'Redis', 'pub/sub']
+tags: ['구현', '개선', 'MSA', 'Redis', 'pub/sub']
 imageUrl: msa_deploy.png
 ---
 
