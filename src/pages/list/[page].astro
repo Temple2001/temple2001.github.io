@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import PostBox from '../../components/PostBox.astro';
+import PaginationButton from '../../components/PaginationButton.astro';
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -14,90 +15,25 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 // getStaticPaths에서 반환된 Props 타입 정보를 불러옴
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+export type PostPageProps = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { page } = Astro.props as Props;
+const { page } = Astro.props as PostPageProps;
 ---
 
 <BlogLayout
 	title=`게시글 ${page.currentPage}페이지 - Temple's Hideout`
 	description="Temple의 개발 관련 블로그입니다."
 >
-	<div class="text-2xl font-bold pb-10">
+	<div class="text-2xl font-bold pb-8">
 		게시글 목록 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {page.currentPage} 페이지
+	</div>
+	<div class="mb-6">
+		<PaginationButton page={page} />
 	</div>
 	<ul class="space-y-6">
 		{page.data.map((post) => <PostBox post={post} />)}
 	</ul>
-	<div class="flex items-center justify-between mt-8">
-		<!-- Previous Button -->
-		{
-			page.start !== 0 ? (
-				<a
-					href={`${page.url.prev}`}
-					class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-				>
-					<svg
-						class="w-3.5 h-3.5 me-2 rtl:rotate-180"
-						aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 14 10"
-					>
-						<path
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M13 5H1m0 0 4 4M1 5l4-4"
-						/>
-					</svg>
-					Previous
-				</a>
-			) : (
-				<span
-					class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-transparent bg-transparent border border-transparent rounded-lg select-none pointer-events-none"
-					aria-hidden="true"
-				>
-					{/* Invisible placeholder */}
-					<svg class="w-3.5 h-3.5 me-2" />
-					Previous
-				</span>
-			)
-		}
-		<!-- Next Button -->
-		{
-			page.currentPage !== page.lastPage ? (
-				<a
-					href={`${page.url.next}`}
-					class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-				>
-					Next
-					<svg
-						class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-						aria-hidden="true"
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 14 10"
-					>
-						<path
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M1 5h12m0 0L9 1m4 4L9 9"
-						/>
-					</svg>
-				</a>
-			) : (
-				<span
-					class="flex items-center justify-center px-3 h-8 text-sm font-medium text-transparent bg-transparent border border-transparent rounded-lg select-none pointer-events-none"
-					aria-hidden="true"
-				>
-					Next
-					<svg class="w-3.5 h-3.5 ms-2" />
-				</span>
-			)
-		}
+	<div class="mt-6">
+		<PaginationButton page={page} />
 	</div>
 </BlogLayout>

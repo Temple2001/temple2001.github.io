@@ -10,15 +10,15 @@ const { post, shorten = false } = Astro.props;
 function coloringTag(tag: string): string {
 	switch (tag) {
 		case '구현':
-			return 'bg-orange-100 text-orange-950';
+			return 'bg-orange-100 text-orange-950 font-semibold';
 		case '리서치':
-			return 'bg-green-100 text-green-950';
+			return 'bg-green-100 text-green-950 font-semibold';
 		case '인프라':
-			return 'bg-blue-100 text-blue-950';
+			return 'bg-blue-100 text-blue-950 font-semibold';
 		case '트러블 슈팅':
-			return 'bg-rose-100 text-rose-950';
+			return 'bg-rose-100 text-rose-950 font-semibold';
 		case '개선':
-			return 'bg-purple-100 text-purple-950';
+			return 'bg-purple-100 text-purple-950 font-semibold';
 		default:
 			return 'bg-slate-200';
 	}
