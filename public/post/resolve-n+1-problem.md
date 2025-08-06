@@ -1,6 +1,6 @@
 ---
 title: N+1 문제를 해결해보자
-description: 포인트 기능 개발 중 맞닥뜨린 N+1 문제를 해결해보자
+description: 유저 초대 기능 개발 중 맞닥뜨린 N+1 문제를 해결해보자
 pubDate: 2025-04-14
 tags: [개선, N+1 문제, Fetch Join, JPQL, '@EntityGraph']
 ---
@@ -9,7 +9,7 @@ tags: [개선, N+1 문제, Fetch Join, JPQL, '@EntityGraph']
 
 # Fetch Join으로 N+1 문제 해결
 
-유저 초대 기록을 저장하는 테이블인 ReferralHistory에서 초대를 보낸 사람으로 조회를 하여 특정 유저의 조회 기록 리스트를 제공하는 API를 구현했었다.
+유저 초대 기록을 저장하는 테이블인 ReferralHistory에서 초대를 보낸 사람으로 조회를 하여 특정 유저의 초대 기록 리스트를 제공하는 API를 구현했었다.
 
 이때 ReferralHistory에 초대 보낸 사람(referrer)과 초대 받은 사람(referred)을 표현하는 필드가 모두 Account 객체로 ManyToOne으로 연관관계가 맺어졌기 때문에, response dto를 작성하는 과정에서 해당 Account 객체의 데이터를 가져오게 되었다.
 

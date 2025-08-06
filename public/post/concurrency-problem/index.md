@@ -121,15 +121,15 @@ public PointResponse decreasePoint(DecreasePointRequest decreasePointRequest) {
 	}
 ```
 
-이 findAllByAccountIdWithLock 을 호출함으로써 해당 테이블에서 AccountId와 관련된 데이터에 대한 쓰기 Lock을 획득할 수 있다.
+이 `findAllByAccountIdWithLock` 을 호출함으로써 해당 테이블에서 `AccountId`와 관련된 데이터에 대한 쓰기 Lock을 획득할 수 있다.
 
 쓰기 Lock을 가지고 있으면 다른 트랜잭션이 동일한 레코드를 읽거나 수정하려고 할 때 Lock이 해제될 때까지 기다려야 한다.
 
-Lock은 @Transactional 의 영향 범위, 여기서는 decreasePoint 메서드 끝에 다다르면 해제된다.
+Lock은 `@Transactional` 의 영향 범위, 여기서는 `decreasePoint` 메서드 끝에 다다르면 해제된다.
 
-findAllByAccountIdWithLock을 호출하면 AccountId의 포인트 기록 데이터들에 Lock이 걸리게 되므로 다른 트랜잭션이 그 동안에는 해당 데이터를 읽을 수 없다.
+`findAllByAccountIdWithLock`을 호출하면 `AccountId`의 포인트 기록 데이터들에 Lock이 걸리게 되므로 다른 트랜잭션이 그 동안에는 해당 데이터를 읽을 수 없다.
 
-따라서 그 뒤의 findPointBalanceByAccountId로 포인트 기록 테이블에서 유저의 포인트 잔액을 얻는 부분부터는 한번에 트랜잭션 하나씩 수행될 수 있다. 동시성 문제가 해결된다는 것이다!
+따라서 그 뒤의 `findPointBalanceByAccountId`로 포인트 기록 테이블에서 유저의 포인트 잔액을 얻는 부분부터는 한번에 트랜잭션 하나씩 수행될 수 있다. 동시성 문제가 해결된다는 것이다!
 
 # 검증 테스트 수행
 
