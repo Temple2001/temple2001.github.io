@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 import tailwindcss from "@tailwindcss/vite";
@@ -11,7 +10,7 @@ import firstImageToFrontmatter from "./src/plugins/remark-first-image-to-frontma
 // https://astro.build/config
 export default defineConfig({
 	site: "https://blog.templ.es",
-	integrations: [mdx(), sitemap()],
+	integrations: [sitemap()],
 	server: {
 		port: 3000,
 	},

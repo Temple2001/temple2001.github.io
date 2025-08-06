@@ -75,43 +75,43 @@ Redis를 NestJS와 함께 Task 단위로 묶어서 Task 통째로 이중화하�
 나는 위의 고려사항들을 토대로 다음과 같이 **Task Definition**을 구성하였다.
 
 - 인프라 요구 사항
-    - 시작 유형 : Fargate
-    - 운영체제 : x86
-    - 태스크 크기 : 1vCPU, 2GB 또는 3GB
+  - 시작 유형 : Fargate
+  - 운영체제 : x86
+  - 태스크 크기 : 1vCPU, 2GB 또는 3GB
 - 컨테이너 설정 **(nestjs)**
-    - 이미지 : ECR에 등록된 이미지 URI 설정
-    - 포트 매핑
-        - 컨테이너 포트 : 바깥(호스트)으로 열 포트 번호 → 3000 (nestjs 기본값)
-        - 프로토콜 : TCP
-        - 포트 이름 : nestjs-port
-        - 앱 프로토콜 : HTTP
-    - 환경 변수
-        - S3에 올린 env 파일을 가져와 설정
-    - 로그 설정
-        - AWS CloudWatch
-    - 상태 확인
-        - 명령 : `CMD-SHELL, curl -f http://localhost:3000/health || exit 1`
-        - 나머지 옵션 기본값
-    - 시작 종속성 설정
-        - redis 컨테이너 실행 이후(Healthy 조건) 시작되도록
+  - 이미지 : ECR에 등록된 이미지 URI 설정
+  - 포트 매핑
+    - 컨테이너 포트 : 바깥(호스트)으로 열 포트 번호 → 3000 (nestjs 기본값)
+    - 프로토콜 : TCP
+    - 포트 이름 : nestjs-port
+    - 앱 프로토콜 : HTTP
+  - 환경 변수
+    - S3에 올린 env 파일을 가져와 설정
+  - 로그 설정
+    - AWS CloudWatch
+  - 상태 확인
+    - 명령 : `CMD-SHELL, curl -f http://localhost:3000/health || exit 1`
+    - 나머지 옵션 기본값
+  - 시작 종속성 설정
+    - redis 컨테이너 실행 이후(Healthy 조건) 시작되도록
 - 컨테이너 설정 **(redis)**
-    - 이미지 : Docker Redis 공식 이미지 URI 설정
-    - 포트 매핑 : X
-    - 로그 설정 : X
-    - 상태 확인
-        - 명령 : `CMD-SHELL, redis-cli ping || exit 1`
-        - 나머지 옵션 기본값
+  - 이미지 : Docker Redis 공식 이미지 URI 설정
+  - 포트 매핑 : X
+  - 로그 설정 : X
+  - 상태 확인
+    - 명령 : `CMD-SHELL, redis-cli ping || exit 1`
+    - 나머지 옵션 기본값
 
 # GitHub Actions를 이용한 ECS 변경사항 업데이트 배포
 
 GitHub 레포지토리의 특정 브랜치(ex. deploy)에 **GitHub Actions**를 적용하여 배포 과정을 구성하였다.
 
 1. 해당 브랜치에 push가 발생하면 프로젝트 내에 위치한 Dockerfile과 프로젝트 빌드 파일을 토대로 Docker Image를 빌드하여 AWS ECR에 업로드
-    - `configure-aws-credentials`, `amazon-ecr-login` 액션을 사용
+ - `configure-aws-credentials`, `amazon-ecr-login` 액션을 사용
 2. 업로드된 새로운 Docker Image의 ID를 ECS Task definition에 반영
-    - `amazon-ecs-render-task-definiton` 액션을 사용
+ - `amazon-ecs-render-task-definiton` 액션을 사용
 3. 변경된 ECS Task definition을 deploy
-    - `amazon-ecs-deploy-task-definition` 액션을 사용
+ - `amazon-ecs-deploy-task-definition` 액션을 사용
 
 ## GitHub Actions workflow 구성
 
