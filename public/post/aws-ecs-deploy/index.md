@@ -107,11 +107,13 @@ Redis를 NestJS와 함께 Task 단위로 묶어서 Task 통째로 이중화하�
 GitHub 레포지토리의 특정 브랜치(ex. deploy)에 **GitHub Actions**를 적용하여 배포 과정을 구성하였다.
 
 1. 해당 브랜치에 push가 발생하면 프로젝트 내에 위치한 Dockerfile과 프로젝트 빌드 파일을 토대로 Docker Image를 빌드하여 AWS ECR에 업로드
- - `configure-aws-credentials`, `amazon-ecr-login` 액션을 사용
+    -> `configure-aws-credentials`, `amazon-ecr-login` 액션을 사용
+
 2. 업로드된 새로운 Docker Image의 ID를 ECS Task definition에 반영
- - `amazon-ecs-render-task-definiton` 액션을 사용
+    -> `amazon-ecs-render-task-definiton` 액션을 사용
+
 3. 변경된 ECS Task definition을 deploy
- - `amazon-ecs-deploy-task-definition` 액션을 사용
+    -> `amazon-ecs-deploy-task-definition` 액션을 사용
 
 ## GitHub Actions workflow 구성
 
@@ -211,6 +213,25 @@ jobs:
 ```
 
 위와 같이 GitHub Actions workflow를 작성하면 main 브랜치에 push가 이루어질 때마다 AWS ECR에 새로운 NestJS 이미지를 빌드 및 업로드하고, 기존 Task Definition을 가져와 새롭게 업로드된 NestJS 이미지를 사용하도록 수정한 뒤 재배포하게 된다.
+
+## ECS 재배포 실행
+
+위 workflow 대로 재배포를 요청한 뒤 ECS Service 안에서 어떤 일이 일어나는지 지켜보았다.
+
+### 새로운 Task 생성
+![image1](image1.png)
+
+### 새로운 Task 실행 중
+![image2](image2.png)
+
+### 새로운 Task의 Health Check 정상 확인
+![image3](image3.png)
+
+### 이전 Task 비활성화 중
+![image4](image4.png)
+
+### 이전 Task 종료
+![image5](image5.png)
 
 # 참조
 
