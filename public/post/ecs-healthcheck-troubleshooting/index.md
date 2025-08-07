@@ -3,7 +3,6 @@ title: ECS 컨테이너 Health Check가 계속 실패하는 이유
 description: ECS 컨테이너에 Health Check를 적용하는 도중 겪은 트러블슈팅 경험
 pubDate: 2025-04-28
 tags: [트러블 슈팅, ECS, Health Check, alpine]
-imageUrl: ecs-container.png
 ---
 
 컨테이너의 백엔드 애플리케이션이 잘 돌아가고 있는지 확인하는 Health Check를 위해 `CMD-SHELL, curl -f http://localhost:3000/health || exit 1` 명령어로 상태 확인을 수행하도록 설정하였다.
