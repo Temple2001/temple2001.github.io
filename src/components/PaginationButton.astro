@@ -6,72 +6,93 @@ const { page } = Astro.props as PostPageProps;
 
 <div class="flex items-center justify-between">
 	<!-- Previous Button -->
-	{
-		page.start !== 0 ? (
-			<a
-				href={`${page.url.prev}`}
-				class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-			>
-				<svg
-					class="w-3.5 h-3.5 me-2 rtl:rotate-180"
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 14 10"
+	<div class="flex-1 flex justify-start">
+		{
+			page.start !== 0 ? (
+				<a
+					href={`${page.url.prev}`}
+					class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
 				>
-					<path
-						stroke="currentColor"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M13 5H1m0 0 4 4M1 5l4-4"
-					/>
-				</svg>
-				Previous
-			</a>
-		) : (
-			<span
-				class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-transparent bg-transparent border border-transparent rounded-lg select-none pointer-events-none"
-				aria-hidden="true"
-			>
-				{/* Invisible placeholder */}
-				<svg class="w-3.5 h-3.5 me-2" />
-				Previous
-			</span>
-		)
-	}
+					<svg
+						class="w-3.5 h-3.5 sm:me-2 rtl:rotate-180"
+						aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 14 10"
+					>
+						<path
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M13 5H1m0 0 4 4M1 5l4-4"
+						/>
+					</svg>
+					<span class="hidden sm:inline">Previous</span>
+				</a>
+			) : (
+				<span
+					class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-transparent bg-transparent border border-transparent rounded-lg select-none pointer-events-none"
+					aria-hidden="true"
+				>
+					<svg class="w-3.5 h-3.5 sm:me-2" />
+					<span class="hidden sm:inline">Previous</span>
+				</span>
+			)
+		}
+	</div>
+	<!-- Current Page Indicator -->
+	<div class="flex gap-x-1">
+		<select
+			class="border border-gray-200 text-gray-800 px-2 text-sm rounded-lg cursor-pointer"
+			value={page.currentPage}
+			onchange="window.location.href = `/list/${this.value}`"
+		>
+			{
+				Array.from({ length: page.lastPage }, (_, i) => (
+					<option value={i + 1} selected={page.currentPage === i + 1}>
+						{i + 1}
+					</option>
+				))
+			}
+		</select>
+		<span class="text-gray-500 py-2 px-1.5 text-sm">of</span>
+		<span class="text-gray-500 py-2 px-1.5 text-sm">{page.lastPage}</span>
+	</div>
 	<!-- Next Button -->
-	{
-		page.currentPage !== page.lastPage ? (
-			<a
-				href={`${page.url.next}`}
-				class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-			>
-				Next
-				<svg
-					class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-					aria-hidden="true"
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 14 10"
+	<div class="flex-1 flex justify-end">
+		{
+			page.currentPage !== page.lastPage ? (
+				<a
+					href={`${page.url.next}`}
+					class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
 				>
-					<path
-						stroke="currentColor"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M1 5h12m0 0L9 1m4 4L9 9"
-					/>
-				</svg>
-			</a>
-		) : (
-			<span
-				class="flex items-center justify-center px-3 h-8 text-sm font-medium text-transparent bg-transparent border border-transparent rounded-lg select-none pointer-events-none"
-				aria-hidden="true"
-			>
-				Next
-				<svg class="w-3.5 h-3.5 ms-2" />
-			</span>
-		)
-	}
+					<span class="hidden sm:inline">Next</span>
+					<svg
+						class="w-3.5 h-3.5 sm:ms-2 rtl:rotate-180"
+						aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 14 10"
+					>
+						<path
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M1 5h12m0 0L9 1m4 4L9 9"
+						/>
+					</svg>
+				</a>
+			) : (
+				<span
+					class="flex items-center justify-center px-3 h-8 text-sm font-medium text-transparent bg-transparent border border-transparent rounded-lg select-none pointer-events-none"
+					aria-hidden="true"
+				>
+					<span class="hidden sm:inline">Next</span>
+					<svg class="w-3.5 h-3.5 sm:ms-2" />
+				</span>
+			)
+		}
+	</div>
 </div>

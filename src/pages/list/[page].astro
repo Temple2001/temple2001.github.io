@@ -21,11 +21,11 @@ const { page } = Astro.props as PostPageProps;
 ---
 
 <BlogLayout
-	title=`게시글 ${page.currentPage}페이지 - Temple's Hideout`
+	title=`전체 게시글 목록 ${page.currentPage}페이지 - Temple's Hideout`
 	description="Temple의 개발 관련 블로그입니다."
 >
 	<div class="text-2xl font-bold pb-8">
-		게시글 목록 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {page.currentPage} 페이지
+		전체 게시글 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; {page.currentPage} 페이지
 	</div>
 	<div class="mb-6">
 		<PaginationButton page={page} />
