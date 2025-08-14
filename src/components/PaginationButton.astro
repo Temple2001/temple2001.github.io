@@ -10,7 +10,7 @@ const { page } = Astro.props as PostPageProps;
 		{
 			page.start !== 0 ? (
 				<a
-					href={`${page.url.prev}`}
+					href={`${page.url.prev}/`}
 					class="flex items-center justify-center px-3 h-8 me-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
 				>
 					<svg
@@ -46,7 +46,7 @@ const { page } = Astro.props as PostPageProps;
 		<select
 			class="border border-gray-200 text-gray-800 px-2 text-sm rounded-lg cursor-pointer"
 			value={page.currentPage}
-			onchange="window.location.href = `/list/${this.value}`"
+			onchange="window.location.href = `/list/${this.value}/`"
 		>
 			{
 				Array.from({ length: page.lastPage }, (_, i) => (
@@ -64,7 +64,7 @@ const { page } = Astro.props as PostPageProps;
 		{
 			page.currentPage !== page.lastPage ? (
 				<a
-					href={`${page.url.next}`}
+					href={`${page.url.next}/`}
 					class="flex items-center justify-center px-3 h-8 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700"
 				>
 					<span class="hidden sm:inline">Next</span>
