@@ -10,6 +10,10 @@
 	--font-title: "Orbitron", sans-serif;
 }
 
+* {
+	@apply antialiased;
+}
+
 /* blockquote 큰따옴표 없애기 */
 .prose :where(blockquote p:first-of-type)::before {
 	content: none !important;
