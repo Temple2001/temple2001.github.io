@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import 'pretendard/dist/web/static/pretendard-dynamic-subset.css';
+@import 'pretendard/dist/web/variable/pretendardvariable.css';
 @import '@fontsource-variable/jetbrains-mono';
 @import '@fontsource/orbitron/600.css';
 
