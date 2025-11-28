@@ -1,23 +1,23 @@
-@import "tailwindcss";
-@import "pretendard/dist/web/static/pretendard-dynamic-subset.css";
-@import "@fontsource-variable/jetbrains-mono";
-@import "@fontsource/orbitron/600.css";
+@import 'tailwindcss';
+@import 'pretendard/dist/web/static/pretendard-dynamic-subset.css';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource/orbitron/600.css';
 
 @plugin "@tailwindcss/typography";
 
 @theme {
-	--font-sans: "Pretendard", sans-serif;
-	--font-title: "Orbitron", sans-serif;
+  --font-sans: 'Pretendard Variable', sans-serif;
+  --font-title: 'Orbitron', sans-serif;
 }
 
 * {
-	@apply antialiased;
+  @apply antialiased;
 }
 
 /* blockquote 큰따옴표 없애기 */
 .prose :where(blockquote p:first-of-type)::before {
-	content: none !important;
+  content: none !important;
 }
 .prose :where(blockquote p:last-of-type)::after {
-	content: none !important;
+  content: none !important;
 }
