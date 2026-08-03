@@ -2,14 +2,21 @@
   "name": "astro-blog",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "npm@10.9.8",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build-smoke": "node scripts/build-smoke.mjs",
+    "check": "astro check",
     "preview": "astro preview",
+    "test": "node --test tests/content-utils.test.mjs",
+    "verify": "npm run check && npm test && npm run build && npm run build-smoke",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.4.1",
     "@fontsource-variable/jetbrains-mono": "^5.2.6",
@@ -23,6 +30,10 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16"
+    "@astrojs/check": "^0.9.4",
+    "@resvg/resvg-js": "^2.6.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "satori": "^0.12.2",
+    "typescript": "^5.8.3"
   }
 }
