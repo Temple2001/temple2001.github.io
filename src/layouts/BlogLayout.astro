@@ -9,19 +9,44 @@ interface Props {
 	description: string;
 	postTitle?: string;
 	postDescription?: string;
+	ogImage?: string;
+	ogType?: 'website' | 'article';
+	publishedTime?: Date;
 }
 
-const { title, description, postTitle, postDescription } = Astro.props;
+const {
+	title,
+	description,
+	postTitle,
+	postDescription,
+	ogImage = '/og/home.png',
+	ogType = 'website',
+	publishedTime,
+} = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
+const ogImageUrl = new URL(ogImage, canonicalUrl).toString();
 ---
 
-<html lang="en">
+<html lang="ko">
 	<head>
 		<ClientRouter />
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="title" content={title} />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+		{publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
 		<title>{title}</title>
 	</head>
 	<body>

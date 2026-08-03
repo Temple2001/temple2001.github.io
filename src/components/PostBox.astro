@@ -8,6 +8,7 @@ interface Props {
 	post: CollectionEntry<'post'>;
 }
 const { post } = Astro.props as Props;
+const cover = post.data.cover;
 ---
 
 <li
@@ -25,10 +26,10 @@ const { post } = Astro.props as Props;
 		</div>
 	</a>
 	{
-		post.data.cover && (
+		cover && (
 			<div class="absolute right-0 top-0 h-full w-[40%] pointer-events-none rounded-tr-lg rounded-br-lg overflow-hidden hidden lg:block">
 				<Image
-					src={post.data.cover}
+					src={typeof cover === 'string' ? cover : cover.src}
 					alt={post.data.coverAlt ?? post.data.title}
 					class="w-full h-full object-cover object-left"
 					loading="lazy"

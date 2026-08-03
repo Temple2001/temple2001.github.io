@@ -5,21 +5,26 @@ import { render } from 'astro:content';
 import { formatDate } from '../../utils';
 import TagButton from '../../components/TagButton.astro';
 import { getVisiblePosts } from '../../lib/post-utils.mjs';
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
 
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
 	return getVisiblePosts(await getCollection('post'), import.meta.env.DEV).map((post) => ({
 			params: { id: post.id },
 			props: { post },
 		}));
-}
+}) satisfies GetStaticPaths;
 
-const { post } = Astro.props;
+type PostPageProps = InferGetStaticPropsType<typeof getStaticPaths>;
+const { post } = Astro.props as PostPageProps;
 const { Content } = await render(post);
 ---
 
 <BlogLayout
 	title=`${post.data.title} - Temple's Hideout`
 	description={post.data.description}
+	ogImage={`/og/post/${post.id}.png`}
+	ogType="article"
+	publishedTime={post.data.pubDate}
 >
 	<h1 class="text-4xl lg:text-5xl break-keep font-bold mb-[1.5rem]">
 		{post.data.title}
