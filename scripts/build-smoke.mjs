@@ -25,8 +25,16 @@ assert.ok(existsSync(join(dist, 'rss.xml')), 'RSS 피드가 없습니다.');
 for (const file of htmlFiles) {
 	const html = readFileSync(file, 'utf8');
 	const ogImage = html.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/i)?.[1];
+	const requiredMeta = [
+		'property="og:site_name"',
+		'property="og:image:type"',
+		'property="og:image:secure_url"',
+	];
 
 	assert.ok(ogImage, `${relative(dist, file)}에 og:image가 없습니다.`);
+	for (const meta of requiredMeta) {
+		assert.ok(html.includes(meta), `${relative(dist, file)}에 ${meta} 메타데이터가 없습니다.`);
+	}
 
 	const imageUrl = new URL(ogImage, 'https://temple.example/');
 	assert.ok(imageUrl.pathname.startsWith('/og/'), `${relative(dist, file)}의 OG 이미지 경로가 올바르지 않습니다.`);

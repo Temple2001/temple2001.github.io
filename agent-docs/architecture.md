@@ -57,7 +57,9 @@ getCollection('post') → getVisiblePosts()
 - 왼쪽은 Header의 검정 영역과 사선 분할을 SVG polygon으로 표현합니다.
 - 로고는 Orbitron, 본문은 Pretendard의 OTF 폰트를 사용합니다.
 - 제목·설명은 길이를 제한해 소셜 카드에서 과도하게 넘치지 않도록 합니다.
+- 텍스트는 일반 공유 화면에서도 읽히도록 로고·제목·설명·메타데이터의 크기를 크게 유지하고, Header보다 더 강한 사선 분할을 사용합니다.
 - 이미지 파일은 요청 시 생성되는 것이 아니라 정적 빌드 중 `dist/og/`에 생성됩니다.
+- `BlogLayout.astro`는 `og:site_name`, `og:image:type`, `og:image:secure_url`과 이미지 버전 query를 함께 제공합니다. OG 디자인을 바꿀 때 `ogImageVersion`을 올려 Telegram 같은 캐시 기반 크롤러가 새 이미지를 다시 요청하게 합니다.
 - 새 OG 종류를 추가하면 `getStaticPaths`의 경로와 페이지의 `ogImage`를 함께 추가합니다.
 
 ## 배포

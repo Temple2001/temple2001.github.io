@@ -16,6 +16,8 @@ const orbitronFont = readFileSync(
 
 const WIDTH = 1200;
 const HEIGHT = 630;
+const DIAGONAL_TOP = 500;
+const DIAGONAL_BOTTOM = 300;
 
 export type OgImageType = 'home' | 'list' | 'post';
 
@@ -79,13 +81,13 @@ export async function createOgImage({
 						position: 'absolute',
 						top: 0,
 						left: 0,
-						width: 430,
+						width: DIAGONAL_TOP,
 						height: HEIGHT,
 					},
-					viewBox: `0 0 430 ${HEIGHT}`,
+					viewBox: `0 0 ${DIAGONAL_TOP} ${HEIGHT}`,
 					children: [
 						node('polygon', {
-							points: `0,0 430,0 344,${HEIGHT} 0,${HEIGHT}`,
+							points: `0,0 ${DIAGONAL_TOP},0 ${DIAGONAL_BOTTOM},${HEIGHT} 0,${HEIGHT}`,
 							fill: '#000000',
 						}),
 					],
@@ -96,7 +98,7 @@ export async function createOgImage({
 					top: 48,
 					color: '#ffffff',
 					fontFamily: 'Orbitron',
-					fontSize: 34,
+					fontSize: 38,
 					fontWeight: 600,
 				}, "Temple's Hideout"),
 				node('div', {
@@ -104,30 +106,30 @@ export async function createOgImage({
 						display: 'flex',
 						flexDirection: 'column',
 						justifyContent: 'center',
-						marginLeft: 440,
-						width: 670,
+						marginLeft: 480,
+						width: 680,
 						height: HEIGHT,
-						padding: '48px 48px 48px 0',
+						padding: '48px 32px 48px 0',
 					},
 					children: [
 						text('div', {
 							color: '#777777',
-							fontSize: 22,
+							fontSize: 24,
 							fontWeight: 600,
 							letterSpacing: 3,
-							marginBottom: 22,
+							marginBottom: 24,
 						}, type === 'post' ? 'DEVELOPMENT NOTE' : 'TEMPLE\'S HIDEOUT'),
 						text('div', {
 							color: '#111111',
-							fontSize: 54,
+							fontSize: 60,
 							fontWeight: 700,
-							lineHeight: 1.18,
-							marginBottom: 22,
+							lineHeight: 1.12,
+							marginBottom: 24,
 						}, shorten(title, 72)),
 						text('div', {
 							color: '#555555',
-							fontSize: 27,
-							lineHeight: 1.35,
+							fontSize: 30,
+							lineHeight: 1.3,
 							marginBottom: 32,
 						}, shorten(description, 130)),
 						node('div', {
@@ -135,7 +137,7 @@ export async function createOgImage({
 								borderTop: '2px solid #dddddd',
 								paddingTop: 16,
 								color: '#888888',
-								fontSize: 21,
+								fontSize: 23,
 							},
 							children: metadata || 'Temple\'s Hideout',
 						}),
