@@ -1,11 +1,10 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getVisiblePosts } from '../lib/post-utils.mjs';
 
 export async function GET(context) {
-	const posts = (await getCollection('post'))
-		.filter((post) => import.meta.env.DEV || post.data.blind !== true)
-		.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+	const posts = getVisiblePosts(await getCollection('post'), import.meta.env.DEV);
 		
 	return rss({
 		title: SITE_TITLE,

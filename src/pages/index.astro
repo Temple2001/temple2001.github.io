@@ -2,13 +2,10 @@
 import { getCollection } from 'astro:content';
 import BlogLayout from '../layouts/BlogLayout.astro';
 import PostBox from '../components/PostBox.astro';
+import { getVisiblePosts } from '../lib/post-utils.mjs';
 import GithubLogo from '../../public/github-mark.svg';
 
-const allPosts = await getCollection('post');
-const recentPosts = allPosts
-	.filter((post) => import.meta.env.DEV || post.data.blind !== true)
-	.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-	.slice(0, 5);
+const recentPosts = getVisiblePosts(await getCollection('post'), import.meta.env.DEV).slice(0, 5);
 ---
 
 <BlogLayout

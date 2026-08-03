@@ -4,11 +4,10 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import PostBox from '../../components/PostBox.astro';
 import PaginationButton from '../../components/PaginationButton.astro';
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import { getVisiblePosts } from '../../lib/post-utils.mjs';
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const allPosts = (await getCollection('post'))
-		.filter((post) => import.meta.env.DEV || post.data.blind !== true)
-		.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+	const allPosts = getVisiblePosts(await getCollection('post'), import.meta.env.DEV);
 	return paginate(allPosts, {
 		pageSize: 10,
 	});

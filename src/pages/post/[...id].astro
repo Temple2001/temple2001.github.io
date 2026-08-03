@@ -4,12 +4,10 @@ import BlogLayout from '../../layouts/BlogLayout.astro';
 import { render } from 'astro:content';
 import { formatDate } from '../../utils';
 import TagButton from '../../components/TagButton.astro';
+import { getVisiblePosts } from '../../lib/post-utils.mjs';
 
 export async function getStaticPaths() {
-	const allPosts = await getCollection('post');
-	return allPosts
-		.filter((post) => import.meta.env.DEV || post.data.blind !== true)
-		.map((post) => ({
+	return getVisiblePosts(await getCollection('post'), import.meta.env.DEV).map((post) => ({
 			params: { id: post.id },
 			props: { post },
 		}));

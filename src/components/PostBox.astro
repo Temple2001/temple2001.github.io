@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { formatDate } from '../utils';
-import { render } from 'astro:content';
 import { Image } from 'astro:assets';
 import TagButton from './TagButton.astro';
 
@@ -9,8 +8,6 @@ interface Props {
 	post: CollectionEntry<'post'>;
 }
 const { post } = Astro.props as Props;
-const { remarkPluginFrontmatter } = await render(post);
-post.data.imageUrl = remarkPluginFrontmatter.imageUrl || post.data.imageUrl;
 ---
 
 <li
@@ -28,15 +25,11 @@ post.data.imageUrl = remarkPluginFrontmatter.imageUrl || post.data.imageUrl;
 		</div>
 	</a>
 	{
-		post.data.imageUrl && (
+		post.data.cover && (
 			<div class="absolute right-0 top-0 h-full w-[40%] pointer-events-none rounded-tr-lg rounded-br-lg overflow-hidden hidden lg:block">
 				<Image
-					src={
-						post.data.imageUrl.startsWith('http')
-							? post.data.imageUrl
-							: `/post/${post.id}/${post.data.imageUrl}`
-					}
-					alt={post.data.title}
+					src={post.data.cover}
+					alt={post.data.coverAlt ?? post.data.title}
 					class="w-full h-full object-cover object-left"
 					loading="lazy"
 					style="mask-image: linear-gradient(to left, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);"
