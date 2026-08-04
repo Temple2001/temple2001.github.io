@@ -3,8 +3,6 @@ title: Test Fixture 생성 전략
 description: 효율적인 테스트 작성을 위해 Test Fixture 생성 전략을 적용해보자
 pubDate: 2025-05-16
 tags: [리서치, Test Fixture, ReflectionTestUtils, spy]
-cover: './performance-test.png'
-coverAlt: '테스트 성능 비교'
 ---
 
 # 목차

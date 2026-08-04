@@ -3,8 +3,6 @@ title: 멋사 -  8주차 JWT 세션
 description: 인증,인가에 사용되는 JWT 알아보기
 pubDate: 2024-05-08
 tags: ['멋쟁이사자처럼']
-cover: './SessionAuth.png'
-coverAlt: 'Session 인증 흐름'
 ---
 
 # 목차

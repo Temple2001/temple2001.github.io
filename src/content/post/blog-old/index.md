@@ -3,8 +3,6 @@ title: 블로그 개발 일지 (Old)
 description: Temple's Hideout 블로그의 옛 버전 개발 일지입니다.
 pubDate: 2022-11-07
 tags: ['구현', 'Gatsby', 'Github Pages']
-cover: 'https://github.com/JaeYeopHan/gatsby-starter-bee/raw/master/assets/screenshot.png'
-coverAlt: '이전 블로그 화면'
 ---
 
 # 목차

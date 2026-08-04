@@ -3,8 +3,6 @@ title: Arcade Manager 제작기
 description: 디스코드 봇을 이용해 오락실의 유튜브 Live 방송을 손쉽게 기록할 수 있는 프로그램을 제작하였습니다.
 pubDate: 2023-03-05
 tags: ['구현', 'Discord', 'Python', 'Flask', 'React', 'MongoDB', 'Youtube API']
-cover: 'https://fastly.4sqi.net/img/general/1116x400/406903573_TTnIbMTaFuDf9irkZfBkF3Dso0MImU3jD5FwAmOGfew.jpg'
-coverAlt: '다양한 리듬게임이 모여있는 노량진 어뮤즈타운'
 ---
 
 > 현재 이 글은 작성중입니다.

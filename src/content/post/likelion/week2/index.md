@@ -3,8 +3,6 @@ title: 멋사 -  2주차 Git 세션
 description: Git에 대한 기본적인 개념과 Github를 통한 협업 방식
 pubDate: 2024-03-13
 tags: ['멋쟁이사자처럼']
-cover: 'https://techblog.woowahan.com/wp-content/uploads/img/2017-10-30/git-flow_overall_graph.png'
-coverAlt: 'Git Flow 전체 흐름'
 ---
 
 # 목차

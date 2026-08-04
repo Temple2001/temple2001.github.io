@@ -3,8 +3,6 @@ title: 멋사 -  17주차 JAR 배포 세션
 description: Spring Boot 프로젝트를 JAR로 배포해보기
 pubDate: 2024-10-09
 tags: ['멋쟁이사자처럼']
-cover: './jar1.png'
-coverAlt: 'JAR 배포 학습 자료'
 ---
 
 # 목차

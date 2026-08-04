@@ -3,8 +3,6 @@ title: 멋사 12기 중앙 해커톤 후기
 description: 멋쟁이사자처럼 12기 중앙 해커톤에 참가했다.
 pubDate: 2024-08-07
 tags: ['후기', '멋쟁이사자처럼', '해커톤']
-cover: './hackathon-1.jpg'
-coverAlt: '해커톤 현장'
 ---
 
 ![](hackathon-1.jpg)

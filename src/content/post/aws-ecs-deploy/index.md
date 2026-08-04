@@ -3,8 +3,6 @@ title: AWS ECS로 이중화와 오토 스케일링 적용
 description: 이중화와 오토 스케일링을 적용하기 위해 AWS ECS로 배포를 수행해보자
 pubDate: 2025-04-24
 tags: [인프라, AWS ECS, 이중화, 오토 스케일링]
-cover: './image1.png'
-coverAlt: 'AWS ECS 배포 구성 화면'
 ---
 
 # 목차

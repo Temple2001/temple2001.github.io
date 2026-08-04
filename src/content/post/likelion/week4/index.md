@@ -3,8 +3,6 @@ title: 멋사 -  4주차 DB 세션
 description: 백엔드의 오아시스, 데이터베이스
 pubDate: 2024-03-27
 tags: ['멋쟁이사자처럼']
-cover: 'https://images.edrawsoft.com/articles/er-diagram-example/one-to-many-erd.png'
-coverAlt: '데이터베이스 ERD'
 ---
 
 # 목차

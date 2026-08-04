@@ -3,8 +3,6 @@ title: EC2 실행 중인 상태에서 볼륨 크기 확장하기
 description: 실행 중인 EC2에 영향을 주지 않고 볼륨 용량을 확장해보자
 pubDate: 2025-04-14
 tags: [인프라, AWS, EC2]
-cover: './image-1.png'
-coverAlt: 'EC2 볼륨 확장 화면'
 ---
 
 ![image.png](image-1.png)

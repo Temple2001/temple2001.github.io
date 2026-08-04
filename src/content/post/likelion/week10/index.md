@@ -3,8 +3,6 @@ title: 멋사 -  10주차 RDS/S3 세션
 description: AWS의 RDS, S3 파헤치기
 pubDate: 2024-06-05
 tags: ['멋쟁이사자처럼']
-cover: './aws1.png'
-coverAlt: 'RDS와 S3 학습 자료'
 ---
 
 # 목차

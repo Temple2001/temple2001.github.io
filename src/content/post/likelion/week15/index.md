@@ -3,8 +3,6 @@ title: 멋사 -  15주차 Spring Data JPA 세션
 description: Spring 환경에서 JPA를 더 쉽게 사용할 수 있도록 하는 Spring Data JPA에 대해 알아보기
 pubDate: 2024-09-25
 tags: ['멋쟁이사자처럼']
-cover: './jpa.png'
-coverAlt: 'Spring Data JPA 학습 자료'
 ---
 
 # 목차

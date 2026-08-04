@@ -3,8 +3,6 @@ title: 멋사 -  18주차 Spring Security 세션
 description: Spring Security의 구조를 익히고 사용해보기
 pubDate: 2024-10-30
 tags: ['멋쟁이사자처럼']
-cover: './security1.png'
-coverAlt: 'Spring Security 학습 자료'
 ---
 
 # 목차
