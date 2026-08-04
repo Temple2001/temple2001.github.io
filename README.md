@@ -37,7 +37,7 @@ npm run verify       # 위 검증을 순서대로 실행
 
 ### 게시물 작성
 
-새 게시물은 `src/content/post/<post-id>/index.md`에 작성합니다. 게시물 전용 이미지는 같은 디렉터리에 두고 frontmatter에서 `cover: './image.png'`로 연결합니다. 상세한 작성법은 [`agent-docs/content-authoring.md`](agent-docs/content-authoring.md)를 참고합니다.
+새 게시물은 `src/content/post/<post-id>/index.md`에 작성합니다. 게시물 전용 이미지는 같은 디렉터리에 두고, 본문 첫 이미지를 카드 대표 이미지로 사용할 때는 `cover`를 생략할 수 있습니다. 다른 이미지를 지정하려면 frontmatter에 `cover: './image.png'`를 작성합니다. 상세한 작성법은 [`agent-docs/content-authoring.md`](agent-docs/content-authoring.md)를 참고합니다.
 
 ### 배포
 

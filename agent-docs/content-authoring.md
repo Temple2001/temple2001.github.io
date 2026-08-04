@@ -26,7 +26,7 @@ coverAlt: '게시물 흐름을 설명하는 다이어그램'
 ---
 ```
 
-`title`, `description`, `pubDate`, `tags`는 필수입니다. 대표 이미지를 사용하지 않을 때는 `cover`와 `coverAlt`를 생략할 수 있습니다. 기존 외부 대표 이미지를 유지해야 할 때만 `cover: 'https://...'` 형식을 사용합니다.
+`title`, `description`, `pubDate`, `tags`는 필수입니다. `cover`를 생략하면 본문에 작성한 첫 번째 Markdown 이미지가 글 목록 카드의 대표 이미지로 자동 사용됩니다. 이때 `coverAlt`도 생략하면 첫 이미지의 alt가 사용되고, alt가 비어 있으면 게시물 제목이 사용됩니다. 본문 첫 이미지와 다른 이미지를 대표 이미지로 사용하거나 순서를 명확히 고정하려면 `cover: './image.png'`와 `coverAlt`를 명시합니다. 기존 외부 대표 이미지를 유지해야 할 때만 `cover: 'https://...'` 형식을 사용합니다.
 
 ## 본문 작성
 

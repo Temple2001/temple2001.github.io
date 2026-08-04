@@ -24,10 +24,10 @@ getCollection('post') → getVisiblePosts()
 | `pubDate` | 예 | `Date`로 변환되는 발행일 |
 | `tags` | 예 | 태그 문자열 배열 |
 | `blind` | 아니오 | true이면 프로덕션 공개 목록에서 제외 |
-| `cover` | 아니오 | co-located 이미지 또는 HTTPS 이미지 URL |
-| `coverAlt` | 아니오 | cover 대체 텍스트 |
+| `cover` | 아니오 | co-located 이미지 또는 HTTPS 이미지 URL. 생략하면 본문 첫 Markdown 이미지 fallback |
+| `coverAlt` | 아니오 | cover 대체 텍스트. 생략하면 fallback 이미지의 alt 또는 제목 |
 
-게시물의 co-located 이미지가 schema의 `image()`를 통과하면 Astro가 image metadata를 생성합니다. `PostBox.astro`는 local metadata와 외부 URL을 모두 카드 이미지로 처리합니다.
+게시물의 co-located 이미지가 schema의 `image()`를 통과하면 Astro가 image metadata를 생성합니다. `PostBox.astro`는 명시된 cover를 우선하고, cover가 없을 때 본문 첫 Markdown 이미지의 경로를 찾아 Vite가 생성한 asset URL로 변환한 뒤 카드 이미지로 표시합니다. 본문 첫 이미지가 외부 URL이면 URL을 그대로 사용합니다.
 
 ## 공개 게시물 정책
 

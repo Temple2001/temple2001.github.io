@@ -44,9 +44,9 @@ tests/                핵심 단위 테스트
 
 - `src/content.config.ts`의 `post` schema가 frontmatter를 검증합니다.
 - `getVisiblePosts()`는 기본적으로 `blind: true` 게시물을 제외하고 발행일 내림차순으로 정렬합니다. 개발 환경에서는 기존 동작을 유지하기 위해 blind 게시물을 볼 수 있고, 프로덕션 빌드와 RSS에서는 제외됩니다.
-- 카드 대표 이미지는 `cover`와 `coverAlt` frontmatter로 지정합니다. 로컬 이미지는 `cover: './image.png'`, 이미 존재하는 외부 이미지는 HTTPS URL을 사용합니다.
+- 카드 대표 이미지는 `cover`와 `coverAlt` frontmatter로 지정합니다. `cover`를 생략하면 본문 첫 번째 Markdown 이미지가 목록 카드의 대표 이미지로 사용됩니다. 이때 `coverAlt`를 생략하면 본문 이미지의 alt, 또는 게시물 제목이 대체 텍스트가 됩니다. 로컬 이미지는 `cover: './image.png'`, 이미 존재하는 외부 이미지는 HTTPS URL을 사용합니다.
 - 게시물 본문은 Markdown 문법만 사용합니다. MDX integration, `.mdx` 파일, JSX 컴포넌트 삽입을 추가하지 않습니다.
-- `PostBox.astro`는 게시물 데이터를 수정하지 않고, collection entry를 그대로 표시합니다.
+- `PostBox.astro`는 게시물 데이터를 수정하지 않고, 명시된 cover를 우선한 뒤 본문 첫 이미지 fallback을 계산해 표시합니다. co-located 로컬 이미지는 Vite asset URL로 변환합니다.
 - OG 이미지는 빌드 시 `src/pages/og/[...slug].png.ts`에서 생성하며, Header의 Orbitron 로고·검정 배경·사선 분할 디자인을 재사용합니다.
 - SEO 메타데이터와 canonical URL은 `src/layouts/BlogLayout.astro`에서 관리합니다. 페이지별 OG 경로만 각 페이지에서 전달합니다.
 

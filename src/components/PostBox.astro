@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { formatDate } from '../utils';
 import { Image } from 'astro:assets';
+import { getFirstMarkdownImage } from '../lib/post-utils.mjs';
 import TagButton from './TagButton.astro';
 
 interface Props {
@@ -9,6 +10,24 @@ interface Props {
 }
 const { post } = Astro.props as Props;
 const cover = post.data.cover;
+const postImages = import.meta.glob(
+	'../content/post/**/*.{png,jpg,jpeg,gif,webp,avif,svg}',
+	{ eager: true, import: 'default', query: '?url' },
+) as Record<string, string>;
+
+const firstImage = cover ? null : getFirstMarkdownImage(post.body ?? '');
+const firstImageSrc = firstImage &&
+	(/^https?:\/\//.test(firstImage.src)
+		? firstImage.src
+		: Object.entries(postImages).find(([path]) =>
+			path.endsWith(`/content/post/${post.id}/${firstImage.src.replace(/^\.\//, '')}`),
+		)?.[1]);
+const previewImage = cover
+	? typeof cover === 'string'
+		? cover
+		: cover.src
+	: firstImageSrc;
+const previewAlt = post.data.coverAlt ?? (firstImage?.alt || post.data.title);
 ---
 
 <li
@@ -26,11 +45,11 @@ const cover = post.data.cover;
 		</div>
 	</a>
 	{
-		cover && (
+		previewImage && (
 			<div class="absolute right-0 top-0 h-full w-[40%] pointer-events-none rounded-tr-lg rounded-br-lg overflow-hidden hidden lg:block">
 				<Image
-					src={typeof cover === 'string' ? cover : cover.src}
-					alt={post.data.coverAlt ?? post.data.title}
+					src={previewImage}
+					alt={previewAlt}
 					class="w-full h-full object-cover object-left"
 					loading="lazy"
 					style="mask-image: linear-gradient(to left, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);"
