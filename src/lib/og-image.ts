@@ -125,12 +125,14 @@ export async function createOgImage({
 							fontWeight: 700,
 							lineHeight: 1.12,
 							marginBottom: 24,
+							wordBreak: 'keep-all',
 						}, shorten(title, 72)),
 						text('div', {
 							color: '#555555',
 							fontSize: 30,
 							lineHeight: 1.3,
 							marginBottom: 32,
+							wordBreak: 'keep-all',
 						}, shorten(description, 130)),
 						node('div', {
 							style: {
