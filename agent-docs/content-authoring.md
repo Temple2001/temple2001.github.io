@@ -20,16 +20,19 @@ src/content/post/my-new-post/
 title: '새 게시물 제목'
 description: '목록과 검색 미리보기에 사용할 짧은 설명입니다.'
 pubDate: '2026-08-03'
-tags: ['Astro', '개발']
+tags: ['개선', 'Astro', '개발']
 cover: './diagram.png'
 coverAlt: '게시물 흐름을 설명하는 다이어그램'
 ---
 ```
 
-`title`, `description`, `pubDate`, `tags`는 필수입니다. `cover`를 생략하면 본문에 작성한 첫 번째 Markdown 이미지가 글 목록 카드의 대표 이미지로 자동 사용됩니다. 이때 `coverAlt`도 생략하면 첫 이미지의 alt가 사용되고, alt가 비어 있으면 게시물 제목이 사용됩니다. 본문 첫 이미지와 다른 이미지를 대표 이미지로 사용하거나 순서를 명확히 고정하려면 `cover: './image.png'`와 `coverAlt`를 명시합니다. 기존 외부 대표 이미지를 유지해야 할 때만 `cover: 'https://...'` 형식을 사용합니다.
+`title`, `description`, `pubDate`, `tags`는 필수입니다. `tags`의 첫 번째 값은 색상이 적용되는 대분류이며 `구현`, `리서치`, `인프라`, `트러블 슈팅`, `개선` 중 하나만 사용합니다. 두 번째 값부터는 글의 구체적인 기술과 주제를 작성합니다.
+
+`cover`를 생략하면 본문에 작성한 첫 번째 Markdown 이미지가 글 목록 카드의 대표 이미지로 자동 사용됩니다. 이때 `coverAlt`도 생략하면 첫 이미지의 alt가 사용되고, alt가 비어 있으면 게시물 제목이 사용됩니다. 본문 첫 이미지와 다른 이미지를 대표 이미지로 사용하거나 순서를 명확히 고정하려면 `cover: './image.png'`와 `coverAlt`를 명시합니다. 기존 외부 대표 이미지를 유지해야 할 때만 `cover: 'https://...'` 형식을 사용합니다.
 
 ## 본문 작성
 
+- 모든 게시물은 frontmatter 바로 다음에 본문 첫 제목으로 `# 목차`를 작성합니다. `remark-toc`가 이를 감지해 목차를 자동 생성하므로 목차 항목은 직접 작성하지 않습니다.
 - `.md` Markdown 문법만 사용합니다.
 - JSX, Astro component import, MDX 문법을 추가하지 않습니다.
 - 본문 이미지도 가능하면 게시물 디렉터리에 두고 `![설명](./diagram.png)`처럼 상대 경로로 참조합니다.
