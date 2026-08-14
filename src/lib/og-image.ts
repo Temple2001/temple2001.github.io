@@ -118,6 +118,7 @@ export async function createOgImage({
 							fontWeight: 600,
 							letterSpacing: 3,
 							marginBottom: 24,
+							textAlign: 'right',
 						}, type === 'post' ? 'DEVELOPMENT NOTE' : 'TEMPLE\'S HIDEOUT'),
 						text('div', {
 							color: '#111111',
@@ -125,6 +126,7 @@ export async function createOgImage({
 							fontWeight: 700,
 							lineHeight: 1.12,
 							marginBottom: 24,
+							textAlign: 'right',
 							wordBreak: 'keep-all',
 						}, shorten(title, 72)),
 						text('div', {
@@ -132,6 +134,7 @@ export async function createOgImage({
 							fontSize: 30,
 							lineHeight: 1.3,
 							marginBottom: 32,
+							textAlign: 'right',
 							wordBreak: 'keep-all',
 						}, shorten(description, 130)),
 						node('div', {
@@ -140,6 +143,7 @@ export async function createOgImage({
 								paddingTop: 16,
 								color: '#888888',
 								fontSize: 23,
+								textAlign: 'right',
 							},
 							children: metadata || 'Temple\'s Hideout',
 						}),
