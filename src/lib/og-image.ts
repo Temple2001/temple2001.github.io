@@ -113,15 +113,13 @@ export async function createOgImage({
 					},
 					children: [
 						text('div', {
+							alignSelf: 'flex-end',
 							color: '#777777',
-							display: 'flex',
 							fontSize: 24,
 							fontWeight: 600,
-							justifyContent: 'flex-end',
 							letterSpacing: 3,
 							marginBottom: 24,
 							textAlign: 'right',
-							width: '100%',
 						}, type === 'post' ? 'DEVELOPMENT NOTE' : 'TEMPLE\'S HIDEOUT'),
 						text('div', {
 							color: '#111111',
@@ -143,15 +141,16 @@ export async function createOgImage({
 						node('div', {
 							style: {
 								borderTop: '2px solid #dddddd',
-								color: '#888888',
-								display: 'flex',
-								fontSize: 23,
-								justifyContent: 'flex-end',
-								paddingTop: 16,
-								textAlign: 'right',
+								width: '100%',
 							},
-							children: metadata || 'Temple\'s Hideout',
 						}),
+						text('div', {
+							alignSelf: 'flex-end',
+							color: '#888888',
+							fontSize: 23,
+							marginTop: 16,
+							textAlign: 'right',
+						}, metadata || 'Temple\'s Hideout'),
 					],
 				}),
 			],

@@ -23,7 +23,7 @@ const {
 	ogType = 'website',
 	publishedTime,
 } = Astro.props;
-const ogImageVersion = '5';
+const ogImageVersion = '6';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 const ogImageUrl = new URL(ogImage, canonicalUrl);
 ogImageUrl.searchParams.set('v', ogImageVersion);
